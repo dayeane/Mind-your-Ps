@@ -10,6 +10,8 @@ function GuestContainer({ guests }) {
       setAllGuest(guests);
       setFilteredGuest(guests)
   }, [guests]);
+
+  
   
   const guestList = filteredGuest.map((guest) => <Guest key={guest.id} guest={guest} />);
   

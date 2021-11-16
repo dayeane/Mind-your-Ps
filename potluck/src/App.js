@@ -10,17 +10,29 @@ import ItemsToBring from './ItemsToBring'
 
 function App() {
   const databaseURL = 'http://localhost:3001/events';
-  
+  const emptyEvent =  {
+    id: 0,
+    code: "",
+    name: "",
+    date: "",
+    time: "",
+    description: "",
+    theme: "",
+    dressCode: "",
+    inviteStructure: "",
+    guests: [],
+    thingsToBring: [],
+    pictures: []
+}
   const [allEvents, setAllEvents] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  
+  const [selectedEvent, setSelectedEvent] = useState(emptyEvent);
 
-  useEffect(() => {
-  fetch(databaseURL)
-  .then(res => res.json())
-  .then(eventsData => setAllEvents(eventsData))
-  }, [])
   
+  useEffect(() => {
+    fetch(databaseURL)
+    .then(res => res.json())
+    .then(eventsData => setAllEvents(eventsData))
+    }, [])
   function codeSubmit(e, eventCode) {
     e.preventDefault();
     const codeName = eventCode;
@@ -34,31 +46,7 @@ function App() {
     }
   }
 
-  const testEvent = {
-    guests: [
-      {
-        id: 1,
-        name: "Dayeane Cortes",
-        email: "dayis@example.com",
-        phone: "5554312244",
-        confirm: "false"
-      },
-      {
-        id: 2,
-        name: "Dan LeFever",
-        email: "dan@example.com",
-        phone: "5554312245",
-        confirm: "true"
-      },
-      {
-        id: 3,
-        name: "David Avery",
-        email: "david@example.com",
-        phone: "5554312249",
-        confirm: "false"
-      },
-    ]
-  }
+ 
   
   return (
     <div className="App">
@@ -68,7 +56,7 @@ function App() {
       <HomeScreen codeSubmit={codeSubmit}/>
       <EventInfo />
       <EventCreationForm />
-      <GuestContainer guests={testEvent.guests}/>
+      <GuestContainer guests={selectedEvent.guests}/>
       <ItemsToBring />
     </div>
   );
