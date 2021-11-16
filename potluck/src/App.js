@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './NavBar';
 import HomeScreen from './HomeScreen';
 import EventInfo from './EventInfo';
+import EventCreationForm from './EventCreationForm';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <HomeScreen />
       <EventInfo />
+      <EventCreationForm />
     </div>
   );
 }

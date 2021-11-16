@@ -4,8 +4,13 @@ function NavBar() {
     return (
         <div>
             <h2>STATIC element: this is the NAVBAR</h2>
-            <p>It should have links to: your list of events (if you're not currently 'in' an event)</p>
-            <p>If you're 'in' an event, then it should have links to the event's things to bring, event info, photo album, and attendee list</p>
+            <p>Updated plan: the navbar will take you between the 'things to bring', 'guests', 'photo album', and 'event info' pages.</p>
+            <p>Maybe a style element to indicate on the navbar where you currently are?</p>
+            <p>Things to Bring</p>
+            <p>Guests</p>
+            <p>Photo album</p>
+            <p>Event Info</p>
+
         </div>
     ) 
 }
