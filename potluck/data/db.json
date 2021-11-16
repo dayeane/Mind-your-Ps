@@ -2,6 +2,7 @@
     "events": [
         {
             "id": 1,
+            "code": "fatuous-aorist-stinky",
             "name": "Test Event!",
             "date": "10-11-21",
             "time": "9:00 PM",
@@ -9,7 +10,29 @@
             "theme": "Software launch party",
             "dressCode": "Themed",
             "inviteStructure": "Plus-one",
-            "guests": [],
+            "guests": [
+                {
+                  "id": 1,
+                  "name": "Dayeane Cortes",
+                  "email": "dayis@example.com",
+                  "phone": "5554312244",
+                  "confirm": "false"
+                },
+                {
+                  "id": 2,
+                  "name": "Dan LeFever",
+                  "email": "dan@example.com",
+                  "phone": "5554312245",
+                  "confirm": "true"
+                },
+                {
+                  "id": 3,
+                  "name": "David Avery",
+                  "email": "david@example.com",
+                  "phone": "5554312249",
+                  "confirm": "false"
+                },
+              ],
             "thingsToBring": [],
             "pictures": []
         }
