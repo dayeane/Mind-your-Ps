@@ -1,0 +1,17 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "name": "Test Event!",
+            "date": "10-11-21",
+            "time": "9:00 PM",
+            "description": "This is an example event object, just to show how the app works",
+            "theme": "Software launch party",
+            "dressCode": "Themed",
+            "inviteStructure": "Plus-one",
+            "guests": [],
+            "thingsToBring": [],
+            "pictures": []
+        }
+    ]
+}

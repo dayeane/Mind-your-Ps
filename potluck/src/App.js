@@ -3,7 +3,9 @@ import './App.css';
 import NavBar from './NavBar';
 import HomeScreen from './HomeScreen';
 import EventInfo from './EventInfo';
+import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
+
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
       <NavBar />
       <HomeScreen />
       <EventInfo />
+      <EventCreationForm />
       <GuestContainer guests={event.guests}/>
     </div>
   );
