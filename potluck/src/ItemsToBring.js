@@ -12,13 +12,16 @@ useState( () => {
     .then((data) => setItemsList(data[0].thingsToBring))
 }, [])
 
+function handleFormSubmit(newItem) {
+    setItemsList([newItem, ...itemsList])
+}
 
     
     return (
         <div>
             <h1> Here are items we need!</h1>
             <ItemContainer itemsList= {itemsList}/>
-            <AddItem />
+            <AddItem handleFormSubmit={handleFormSubmit}/>
         </div>
     )
 }

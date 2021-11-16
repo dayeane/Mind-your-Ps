@@ -1,18 +1,34 @@
-import react from "react"
+import react, {useState}  from "react"
 
-function AddItem () {
+function AddItem ( {handleFormSubmit}) {
+   
+    const [formData, setFormData] = useState ({
+        item:"",
+        category:"",
+        claimer:"",
+    })
+
+    function handleChange (e) {
+        setFormData({formData, [e.target.name]: e.target.value})
+    }
+
+    function handleSubmit(){
+
+
+    }   
+
     return (
       <>
         <h2>Here is a form to add an item</h2>
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label for="itme">Item</label>
-                    <input type="text" name="item"/>
+                    <label for="item">Item</label>
+                    <input onchange={handleChange} value={formData.item} type="text" name="item"/>
                     <label for="category">Category</label>
-                    <input type="text" name="category"/>
+                    <input onchange={handleChange} value={formData.category} type="text" name="category"/>
                     <label for="claimer">Owner</label>
-                    <input type="text" name="claimer"/>
+                    <input onchange={handleChange} value={formData.claimer} type="text" name="claimer"/>
                 </div>
                 <button type="submit">
                     Add Item
