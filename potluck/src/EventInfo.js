@@ -1,7 +1,8 @@
 
-function EventInfo({eventObj}) {
+function EventInfo(/*{eventObj}*/) {
 
     //{name, time, date, description, location, guests, thingsToBring} = {eventObj};
+
 
     return (
         <div id="eventInfo">

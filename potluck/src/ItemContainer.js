@@ -1,7 +1,11 @@
 import react from "react"
 import ItemCard from "./ItemCard"
 
-function ItemContainer () {
+function ItemContainer ( {itemsList} ) {
+    
+    const shownItem = itemsList.map((item) => <ItemCard key= {item.id} item= {item}  /> 
+    )
+    
     return (
     <>
         <h2>Here is the list of items</h2>
@@ -19,7 +23,7 @@ function ItemContainer () {
                         <h3>Owner</h3>
                     </th>
                 </tr>
-                <ItemCard />
+                {shownItem}
             </tbody>
         </table>
     </>
