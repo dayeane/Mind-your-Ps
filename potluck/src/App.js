@@ -1,10 +1,10 @@
-// import logo from './logo.svg';
 import './App.css';
 import NavBar from './NavBar';
 import HomeScreen from './HomeScreen';
 import EventInfo from './EventInfo';
 import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
+import ItemsToBring from './ItemsToBring'
 
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
       <EventInfo />
       <EventCreationForm />
       <GuestContainer guests={event.guests}/>
+      <ItemsToBring />
     </div>
   );
 }

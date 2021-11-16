@@ -10,8 +10,28 @@
             "dressCode": "Themed",
             "inviteStructure": "Plus-one",
             "guests": [],
-            "thingsToBring": [],
+            "thingsToBring": [
+                {
+                    "id": 1,
+                    "item": "Ice",
+                    "category": "food",
+                    "claimer": ""
+                },
+                {
+                    "id": 2,
+                    "item": "Beer",
+                    "category": "BYO",
+                    "claimer": ""
+                },
+                {
+                    "id": 3,
+                    "item": "Paper Plates",
+                    "category": "Items",
+                    "claimer": ""
+                }
+            ],
             "pictures": []
         }
     ]
 }
+

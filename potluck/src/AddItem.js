@@ -7,9 +7,12 @@ function AddItem () {
         <div>
             <form>
                 <div>
-                    <input type="text" name="item">Item Needed</input>
-                    <input type="text" name="category">Category</input>
-                    <input type="text" name="claimer">Who's Bring It</input>
+                    <label for="itme">Item</label>
+                    <input type="text" name="item"/>
+                    <label for="category">Category</label>
+                    <input type="text" name="category"/>
+                    <label for="claimer">Owner</label>
+                    <input type="text" name="claimer"/>
                 </div>
                 <button type="submit">
                     Add Item
