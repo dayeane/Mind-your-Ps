@@ -1,7 +1,24 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
 function EventCreationForm () {
+
+    //this will fetch 3 random words for creating an event code-word
+    let threeWords = '';
+    const codeWordGenerator = 'https://random-word-api.herokuapp.com/word?number=3';
+    const databaseURL = 'http://localhost:3000/events';
+    
+    useEffect(() => {
+        fetch(codeWordGenerator)
+        .then(res => res.json())
+        .then(arrThreeWords => {
+            threeWords = arrThreeWords.join('-');
+            setFormData({...formData, code: threeWords})
+            console.log(threeWords);
+        })
+    }, [])
+    
+    
 
     const [formData, setFormData] = useState({
         eventName:'',
@@ -11,6 +28,7 @@ function EventCreationForm () {
         eventTheme:'',
         eventDressCode:'',
         eventInviteStructure:'',
+        code: '',
     })
 
     function formChangeHandler(e) {
@@ -27,6 +45,19 @@ function EventCreationForm () {
         console.log("(so don't forget)");
         console.log("Until then - here's the form data: ");
         console.log(formData);
+
+        const postConfig = {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(formData)
+        }
+
+        fetch(databaseURL, postConfig)
+        .then(res => res.json())
+        .then(eventObj => {
+            console.log(eventObj);
+            //This needs to be sent to state upstream to be the event that's loaded for all of the other app functionality
+        })
 
         setFormData({
             eventName:'',
@@ -66,7 +97,11 @@ function EventCreationForm () {
                 <option value='other'>Other</option>
             </select>
             <label for='eventInviteStructure'>Event invite structure:</label>
-            <input type='text' id='eventInviteStructure' name='eventInviteStructure' value={formData.eventInviteStructure}></input>
+            <select id='eventInviteStructure' name='eventInviteStructure' value={formData.inviteStructure}>
+                <option value='plus one'>Plus one</option>
+                <option value='invite only'>Invite only</option>
+                <option value='bring your friends'>Bring your friends!</option>
+            </select>
             <button type='submit' id='submit' name='submit'>Party!</button>
         </form>
 
