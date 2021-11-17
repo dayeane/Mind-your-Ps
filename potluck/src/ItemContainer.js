@@ -1,9 +1,9 @@
 import react from "react"
 import ItemCard from "./ItemCard"
 
-function ItemContainer ( {itemsList} ) {
+function ItemContainer ( {itemsList, handleClaimItem} ) {
     
-    const shownItem = itemsList.map((item) => <ItemCard key= {item.id} item= {item}  /> 
+    const shownItem = itemsList.map((item) => <ItemCard key= {item.id} item= {item}  handleClaimItem={handleClaimItem}/> 
     )
     
     return (

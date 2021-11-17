@@ -1,60 +1,65 @@
 {
-    "events": [
+  "events": [
+    {
+      "id": 1,
+      "code": "fatuous-aorist-stinky",
+      "name": "Test Event!",
+      "date": "10-11-21",
+      "time": "9:00 PM",
+      "description": "This is an example event object, just to show how the app works",
+      "theme": "Software launch party",
+      "dressCode": "Themed",
+      "inviteStructure": "Plus-one",
+      "guests": [
         {
-            "id": 1,
-            "code": "fatuous-aorist-stinky",
-            "name": "Test Event!",
-            "date": "10-11-21",
-            "time": "9:00 PM",
-            "description": "This is an example event object, just to show how the app works",
-            "theme": "Software launch party",
-            "dressCode": "Themed",
-            "inviteStructure": "Plus-one",
-            "guests": [
-                {
-                  "id": 1,
-                  "name": "Dayeane Cortes",
-                  "email": "dayis@example.com",
-                  "phone": "5554312244",
-                  "confirm": "false"
-                },
-                {
-                  "id": 2,
-                  "name": "Dan LeFever",
-                  "email": "dan@example.com",
-                  "phone": "5554312245",
-                  "confirm": "true"
-                },
-                {
-                  "id": 3,
-                  "name": "David Avery",
-                  "email": "david@example.com",
-                  "phone": "5554312249",
-                  "confirm": "false"
-                }
-              ],
-            "thingsToBring": [
-                {
-                    "id": 1,
-                    "item": "Ice",
-                    "category": "food",
-                    "claimer": ""
-                },
-                {
-                    "id": 2,
-                    "item": "Beer",
-                    "category": "BYO",
-                    "claimer": ""
-                },
-                {
-                    "id": 3,
-                    "item": "Paper Plates",
-                    "category": "Items",
-                    "claimer": ""
-                }
-            ],
-            "pictures": []
+          "id": 1,
+          "name": "Dayeane Cortes",
+          "email": "dayis@example.com",
+          "phone": "5554312244",
+          "confirm": "false"
+        },
+        {
+          "id": 2,
+          "name": "Dan LeFever",
+          "email": "dan@example.com",
+          "phone": "5554312245",
+          "confirm": "true"
+        },
+        {
+          "id": 3,
+          "name": "David Avery",
+          "email": "david@example.com",
+          "phone": "5554312249",
+          "confirm": "false"
         }
-    ]
+      ],
+      "thingsToBring": [
+        {
+          "id": 1,
+          "item": "Ice",
+          "category": "food",
+          "claimer": ""
+        },
+        {
+          "id": 2,
+          "item": "Beer",
+          "category": "BYO",
+          "claimer": ""
+        },
+        {
+          "id": 3,
+          "item": "Paper Plates",
+          "category": "Items",
+          "claimer": ""
+        },
+        {
+          "id": "",
+          "item": "burgers",
+          "category": "food",
+          "claimer": "dan"
+        }
+      ],
+      "pictures": []
+    }
+  ]
 }
-

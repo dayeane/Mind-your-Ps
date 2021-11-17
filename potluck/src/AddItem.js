@@ -2,10 +2,13 @@ import react, {useState}  from "react"
 
 function AddItem ( {handleFormSubmit, itemsList, fullData}) {
 
-    const {id} = fullData
+    const {id} = fullData[0]
+
+    console.log(id)
     
    
     const [formData, setFormData] = useState ({
+        id:"",
         item:"",
         category:"",
         claimer:"",
@@ -16,7 +19,7 @@ function AddItem ( {handleFormSubmit, itemsList, fullData}) {
     }
 
     function handleSubmit(e){
-        e.preventDefaut()
+        e.preventDefault()
 
         const updatedList= [...itemsList, formData] 
         const patchObj= {thingsToBring: updatedList}
@@ -29,7 +32,7 @@ function AddItem ( {handleFormSubmit, itemsList, fullData}) {
             body: JSON.stringify(patchObj)
         } )
         .then(res => res.json())
-        .then(handleFormSubmit())
+        .then((data)=>handleFormSubmit(data))
     
     }   
 

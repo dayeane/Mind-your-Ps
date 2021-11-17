@@ -20,14 +20,17 @@ useState( () => {
 
 function handleFormSubmit(newItem) {
    console.log(newItem)
-    // setItemsList([newItem, ...itemsList])
+    setFullData([newItem, ...fullData])
 }
 
-    
+function handleClaimItem(newClaimer) {
+    console.log(newClaimer)
+}
+
     return (
         <div>
             <h1> Here are items we need!</h1>
-            <ItemContainer itemsList= {itemsList}/>
+            <ItemContainer handleClaimItem= {handleClaimItem} itemsList= {itemsList}/>
             <AddItem handleFormSubmit={handleFormSubmit} fullData={fullData} itemsList={itemsList}/>
         </div>
     )
