@@ -56,7 +56,7 @@ function App() {
       <HomeScreen codeSubmit={codeSubmit}/>
       <EventInfo />
       <EventCreationForm />
-      <GuestContainer guests={selectedEvent.guests}/>
+      <GuestContainer guests={selectedEvent.guests} eventId={selectedEvent.eventId}/>
       <ItemsToBring />
     </div>
   );

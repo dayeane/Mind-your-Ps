@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import Guest from "./Guest";
 import GuestSearch from "./GuestSearch";
 
-function GuestContainer({ guests }) {
+function GuestContainer({ guests, eventId }) {
   const [allGuest, setAllGuest] = useState([]);
   const [filteredGuest, setFilteredGuest] = useState([]);
 
