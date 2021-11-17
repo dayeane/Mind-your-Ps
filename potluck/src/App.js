@@ -5,8 +5,8 @@ import EventInfo from './EventInfo';
 import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
-import ItemsToBring from './ItemsToBring'
-
+import ItemsToBring from './ItemsToBring';
+import { Switch, Route } from 'react-router-dom';
 
 
 function App() {
@@ -15,14 +15,15 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState({});
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
-
+  // const [selectedEvent, setSelectedEvent] = useState([]);
   
   useEffect(() => {
     fetch(databaseURL)
     .then(res => res.json())
     .then(eventsData => setAllEvents(eventsData))
   }, [])
-
+  
+  //for retrieving event from API by codeword index
   function codeSubmit(e, eventCode) {
     e.preventDefault();
 
@@ -37,6 +38,7 @@ function App() {
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests)
+      setAllEvents([]);
     }
   }
 
@@ -45,16 +47,31 @@ function App() {
       <h1>POTLUCK</h1>
       <p>Static element: this is the main app container</p>
       <NavBar />
-      <HomeScreen codeSubmit={codeSubmit}/>
-      <EventInfo />
-      <EventCreationForm />
-      <GuestContainer  allGuest={allGuest}
-                       setAllGuest={setAllGuest}
-                       filteredGuest={filteredGuest}
-                       setFilteredGuest={setFilteredGuest}
-                       event={selectedEvent}
-                       eventId={selectedEvent.id}/>
-      <ItemsToBring />
+      <Switch>
+        <Route exact path="/">
+          <HomeScreen codeSubmit={codeSubmit}/>
+        </Route>
+        <Route exact path="/info">
+          <EventInfo eventObj={selectedEvent}/>
+        </Route>
+        <Route exact path="/createEvent">
+          <EventCreationForm />
+        </Route>
+        <Route exact path="/guests">
+          <GuestContainer  allGuest={allGuest}
+                            setAllGuest={setAllGuest}
+                            filteredGuest={filteredGuest}
+                            setFilteredGuest={setFilteredGuest}
+                            event={selectedEvent}
+                            eventId={selectedEvent.id}/>
+        </Route>
+        <Route exact path="/itemsToBring">
+          <ItemsToBring />
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }

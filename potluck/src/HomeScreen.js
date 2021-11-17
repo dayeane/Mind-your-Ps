@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function HomeScreen({codeSubmit}) {
 
@@ -8,14 +9,6 @@ function HomeScreen({codeSubmit}) {
     function codeChange(e) {
         setEventCode(e.target.value);
     }
-
-    /*
-    function codeSubmit(e) {
-        e.preventDefault();
-        console.log("I see the code submission");
-
-    }
-    */
 
     return (
         <div id="HomeScreen">
@@ -30,7 +23,7 @@ function HomeScreen({codeSubmit}) {
                 <button type='submit' id='codeSubmit' name='codeSubmit'>Submit Code</button>
             </form>
             <p></p>
-            <button>Create New Event</button>
+            <Link to='/createEvent'>Create New Event</Link>
 
         </div>
     )
