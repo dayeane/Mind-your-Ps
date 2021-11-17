@@ -5,15 +5,22 @@ import AddItem from "./AddItem.js"
 function ItemsToBring () {
     
 const [itemsList, setItemsList] = useState([])
+const [fullData, setFullData]= useState([])
+
+
 
 useState( () => {
-    fetch( "http://localhost:3000/events")
+    fetch( "http://localhost:3001/events")
     .then(res => res.json())
-    .then((data) => setItemsList(data[0].thingsToBring))
+    .then((data) => {
+        setItemsList(data[0].thingsToBring)
+        setFullData(data)   
+    })
 }, [])
 
 function handleFormSubmit(newItem) {
-    setItemsList([newItem, ...itemsList])
+   console.log(newItem)
+    // setItemsList([newItem, ...itemsList])
 }
 
     
@@ -21,7 +28,7 @@ function handleFormSubmit(newItem) {
         <div>
             <h1> Here are items we need!</h1>
             <ItemContainer itemsList= {itemsList}/>
-            <AddItem handleFormSubmit={handleFormSubmit}/>
+            <AddItem handleFormSubmit={handleFormSubmit} fullData={fullData} itemsList={itemsList}/>
         </div>
     )
 }

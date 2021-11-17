@@ -1,6 +1,9 @@
 import react, {useState}  from "react"
 
-function AddItem ( {handleFormSubmit}) {
+function AddItem ( {handleFormSubmit, itemsList, fullData}) {
+
+    const {id} = fullData
+    
    
     const [formData, setFormData] = useState ({
         item:"",
@@ -9,12 +12,25 @@ function AddItem ( {handleFormSubmit}) {
     })
 
     function handleChange (e) {
-        setFormData({formData, [e.target.name]: e.target.value})
+        setFormData({...formData, [e.target.name]: e.target.value})
     }
 
-    function handleSubmit(){
+    function handleSubmit(e){
+        e.preventDefaut()
 
+        const updatedList= [...itemsList, formData] 
+        const patchObj= {thingsToBring: updatedList}
 
+        fetch (`http://localhost:3001/events/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(patchObj)
+        } )
+        .then(res => res.json())
+        .then(handleFormSubmit())
+    
     }   
 
     return (
@@ -24,11 +40,11 @@ function AddItem ( {handleFormSubmit}) {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label for="item">Item</label>
-                    <input onchange={handleChange} value={formData.item} type="text" name="item"/>
+                    <input onChange={handleChange} value={formData.item} type="text" name="item"/>
                     <label for="category">Category</label>
-                    <input onchange={handleChange} value={formData.category} type="text" name="category"/>
+                    <input onChange={handleChange} value={formData.category} type="text" name="category"/>
                     <label for="claimer">Owner</label>
-                    <input onchange={handleChange} value={formData.claimer} type="text" name="claimer"/>
+                    <input onChange={handleChange} value={formData.claimer} type="text" name="claimer"/>
                 </div>
                 <button type="submit">
                     Add Item
