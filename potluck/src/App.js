@@ -15,8 +15,7 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState([]);
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
-  // const [selectedEvent, setSelectedEvent] = useState([]);
-  
+    
   useEffect(() => {
     fetch(databaseURL)
     .then(res => res.json())
@@ -34,18 +33,16 @@ function App() {
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      // alert('Event found! Loaded into event manager :)');
+      alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests)
-      setAllEvents([]);
     }
   }
 
   return (
     <div className="App">
       <h1>POTLUCK</h1>
-      <p>Static element: this is the main app container</p>
       <NavBar />
       <Switch>
         <Route exact path="/">
