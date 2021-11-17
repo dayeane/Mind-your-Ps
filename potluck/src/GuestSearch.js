@@ -40,6 +40,7 @@ function GuestSearch({setFilteredGuest, allGuest}) {
 
     return(
      <>
+     <h2>Guest Search</h2>
         <form>
             <label>Name:</label>
             <input onChange={handleSearch} ref={name} type="text" id="name" name="name" />
