@@ -11,22 +11,10 @@ import ItemsToBring from './ItemsToBring'
 
 function App() {
   const databaseURL = 'http://localhost:3001/events';
-  const emptyEvent =  {
-    id: 0,
-    code: "",
-    name: "",
-    date: "",
-    time: "",
-    description: "",
-    theme: "",
-    dressCode: "",
-    inviteStructure: "",
-    guests: [],
-    thingsToBring: [],
-    pictures: []
-}
   const [allEvents, setAllEvents] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState(emptyEvent);
+  const [selectedEvent, setSelectedEvent] = useState({});
+  const [allGuest, setAllGuest] = useState(selectedEvent.guests);
+  const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
 
   
   useEffect(() => {
@@ -45,8 +33,10 @@ function App() {
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      alert('Event found! Loaded into event manager :)');
+      // alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
+      setAllGuest(filterResult[0].guests);
+      setFilteredGuest(filterResult[0].guests)
     }
   }
 
@@ -58,7 +48,12 @@ function App() {
       <HomeScreen codeSubmit={codeSubmit}/>
       <EventInfo />
       <EventCreationForm />
-      <GuestContainer guests={selectedEvent.guests} eventId={selectedEvent.id}/>
+      <GuestContainer  allGuest={allGuest}
+                       setAllGuest={setAllGuest}
+                       filteredGuest={filteredGuest}
+                       setFilteredGuest={setFilteredGuest}
+                       event={selectedEvent}
+                       eventId={selectedEvent.id}/>
       <ItemsToBring />
     </div>
   );

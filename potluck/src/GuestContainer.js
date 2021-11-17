@@ -3,16 +3,9 @@ import Guest from "./Guest";
 import GuestSearch from "./GuestSearch";
 import GuestCreateForm from "./GuestCreateForm";
 
-function GuestContainer({ guests, eventId }) {
-  const [allGuest, setAllGuest] = useState([]);
-  const [filteredGuest, setFilteredGuest] = useState([]);
+function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilteredGuest }) {
 
-  useEffect(() => {
-      setAllGuest(guests);
-      setFilteredGuest(guests)
-  }, [guests]);
-
-  
+  if (!filteredGuest){ return <h2>..loading</h2> }
   
   const guestList = filteredGuest.map((guest) => <Guest key={guest.id} guest={guest} />);
   
