@@ -12,10 +12,7 @@ function HomeScreen({codeSubmit}) {
 
     return (
         <div id="HomeScreen">
-            <h2>STATIC element: this is the 'Home' screen.</h2>
-            <p>It should essentially be the 'landing' point when you first enter the potluck app.</p>
-            <p>It should have an input field for your event 'code', or a button to go to 'Create New Event'</p>
-            <p>After loading an event (or creating an event), the Home screen should pretty much not exist (unless the site is reloaded)</p>
+            <h2>HOME</h2>
 
             <form name='codeForm' onSubmit={(e) => codeSubmit(e, eventCode)}>
                 <label for='code'>Event code:</label>
