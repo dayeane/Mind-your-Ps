@@ -7,6 +7,7 @@ import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring';
 import { Switch, Route } from 'react-router-dom';
+import Photos from './Photos';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState([]);
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
+  const [allEventPhotos, setAllEventPhotos] = useState(selectedEvent.photos)
   // const [selectedEvent, setSelectedEvent] = useState([]);
   
   useEffect(() => {
@@ -38,9 +40,11 @@ function App() {
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests)
+      setAllEventPhotos(filterResult[0].photos)
       setAllEvents([]);
     }
   }
+  
 
   return (
     <div className="App">
@@ -67,6 +71,9 @@ function App() {
         </Route>
         <Route exact path="/itemsToBring">
           <ItemsToBring />
+        </Route>
+        <Route exact path="/photos">
+          <Photos allEventPhotos={allEventPhotos} />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

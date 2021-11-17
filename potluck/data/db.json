@@ -1,61 +1,83 @@
 {
-    "events": [
-        {
-            "id": 1,
-            "code": "fatuous-aorist-stinky",
-            "name": "Test Event!",
-            "date": "10-11-21",
-            "time": "9:00 PM",
-            "description": "This is an example event object, just to show how the app works",
-            "theme": "Software launch party",
-            "dressCode": "Themed",
-            "inviteStructure": "Plus-one",
-            "location": "Zoom call",
-            "guests": [
-                {
-                  "id": 1,
-                  "name": "Dayeane Cortes",
-                  "email": "dayis@example.com",
-                  "phone": "5554312244",
-                  "confirm": "false"
-                },
-                {
-                  "id": 2,
-                  "name": "Dan LeFever",
-                  "email": "dan@example.com",
-                  "phone": "5554312245",
-                  "confirm": "true"
-                },
-                {
-                  "id": 3,
-                  "name": "David Avery",
-                  "email": "david@example.com",
-                  "phone": "5554312249",
-                  "confirm": "false"
-                }
-              ],
-            "thingsToBring": [
-                {
-                    "id": 1,
-                    "item": "Ice",
-                    "category": "food",
-                    "claimer": ""
-                },
-                {
-                    "id": 2,
-                    "item": "Beer",
-                    "category": "BYO",
-                    "claimer": ""
-                },
-                {
-                    "id": 3,
-                    "item": "Paper Plates",
-                    "category": "Items",
-                    "claimer": ""
-                }
-            ],
-            "pictures": []
+  "events": [
+    {
+      "id": 1,
+      "code": "fatuous-aorist-stinky",
+      "name": "Test Event!",
+      "date": "10-11-21",
+      "time": "9:00 PM",
+      "description": "This is an example event object, just to show how the app works",
+      "theme": "Software launch party",
+      "dressCode": "Themed",
+      "inviteStructure": "Plus-one",
+      "location": "Zoom call",
+      "photos": [
+        { 
+          "id": 1 ,  
+          "name":"Firulais Birthday ", 
+          "url":"https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y"
+        },
+        { 
+          "id": 2 ,  
+          "name":"Katie Wedding", 
+          "url":"https://i.picsum.photos/id/1013/4256/2832.jpg?hmac=UmYgZfqY_sNtHdug0Gd73bHFyf1VvzFWzPXSr5VTnDA"
+        },
+        { 
+          "id": 3,   
+          "name":"Holiday Trip", 
+          "url":"https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
         }
-    ]
+      ],
+      "guests": [
+        {
+          "id": 1,
+          "name": "Dayeane Cortes",
+          "email": "dayis@example.com",
+          "phone": "5554312244",
+          "confirm": "false"
+        },
+        {
+          "id": 2,
+          "name": "Dan LeFever",
+          "email": "dan@example.com",
+          "phone": "5554312245",
+          "confirm": "true"
+        },
+        {
+          "id": 3,
+          "name": "David Avery",
+          "email": "david@example.com",
+          "phone": "5554312249",
+          "confirm": "false"
+        },
+        {
+          "id": "2e2d8fb0-e8e2-4219-889e-850c365ebbd9",
+          "name": "Dayeane66",
+          "email": "dayeane85@gmail.com",
+          "phone": "9548033128",
+          "confirm": "true"
+        }
+      ],
+      "thingsToBring": [
+        {
+          "id": 1,
+          "item": "Ice",
+          "category": "food",
+          "claimer": ""
+        },
+        {
+          "id": 2,
+          "item": "Beer",
+          "category": "BYO",
+          "claimer": ""
+        },
+        {
+          "id": 3,
+          "item": "Paper Plates",
+          "category": "Items",
+          "claimer": ""
+        }
+      ]
+    }
+  ]
 }
-
