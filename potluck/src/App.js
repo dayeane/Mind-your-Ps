@@ -12,7 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
   const databaseURL = 'http://localhost:3001/events';
   const [allEvents, setAllEvents] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState({});
+  const [selectedEvent, setSelectedEvent] = useState([]);
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
   // const [selectedEvent, setSelectedEvent] = useState([]);

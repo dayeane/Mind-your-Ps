@@ -1,11 +1,10 @@
-import {useEffect, useState} from "react";
 import Guest from "./Guest";
 import GuestSearch from "./GuestSearch";
 import GuestCreateForm from "./GuestCreateForm";
 
 function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilteredGuest }) {
 
-  if (!filteredGuest){ return <h2>..loading</h2> }
+  if (!filteredGuest){ return <h2>..Please select and event from home page</h2> }
   
   const guestList = filteredGuest.map((guest) => <Guest key={guest.id} guest={guest} />);
   
