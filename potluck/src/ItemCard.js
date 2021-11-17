@@ -1,6 +1,6 @@
 import react, {useState} from "react"
 
-function ItemCard ( {itemObj, shownList, seteShownItems, selectedEvent, setSelectedEvent, handleClaimItem }) {
+function ItemCard ( {itemObj, shownList, seteShownItems, selectedEvent, handleDelete, setSelectedEvent, handleClaimItem }) {
     
     const {item, category, claimer} = itemObj
 
@@ -54,7 +54,7 @@ function ItemCard ( {itemObj, shownList, seteShownItems, selectedEvent, setSelec
                     <button type="submit">Claim</button>
                 </form>
             </td>
-            <td><button>Delete here</button></td>
+            <td><button onClick={()=> handleDelete(item)}>Delete here</button></td>
         </tr>
        
     )

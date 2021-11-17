@@ -4,17 +4,29 @@ import AddItem from "./AddItem.js"
 
 function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     
+const {id}= selectedEvent
 
-    
 const itemList=selectedEvent.thingsToBring
 
 const [shownItems, seteShownItems] = useState(itemList)
 
+function handleDelete(deleteItemObj) {
+    
+    const updatedItemList= itemList.filter((itemObj)=> itemObj.item !== deleteItemObj)
+    
+    fetch(`http://localhost:3001/events/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body:JSON.stringify({updatedItemList})
+    })
+    .then(res=> res.json())
+    .then((data)=> console.log(data))
+    
+    seteShownItems(updatedItemList)
+  }
 
-// function handleFormSubmit(newItem) {
-//    console.log(newItem)
-//    setSelectedEvent([newItem, ...fullData])
-// }
 
 function handleClaimItem(newClaimer) {
     console.log(newClaimer)
@@ -28,6 +40,7 @@ function handleClaimItem(newClaimer) {
             seteShownItems= {seteShownItems}
             selectedEvent={selectedEvent}
             setSelectedEvent={setSelectedEvent}
+            handleDelete={handleDelete}
             />
             <AddItem 
                 // handleFormSubmit={handleFormSubmit} 

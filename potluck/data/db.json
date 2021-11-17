@@ -75,9 +75,65 @@
           "item": "board games",
           "category": "items",
           "claimer": "greg"
+        },
+        {
+          "id": "a7670fe2-9b07-47ec-b300-80300293f0c7",
+          "item": "cooler",
+          "category": "items",
+          "claimer": "dan"
+        },
+        {
+          "id": "834d9250-87e1-4c19-afd1-d067edba5377",
+          "item": "chicken",
+          "category": "food",
+          "claimer": ""
         }
       ],
-      "pictures": []
+      "pictures": [],
+      "updatedItemList": [
+        {
+          "id": 1,
+          "item": "Ice",
+          "category": "food",
+          "claimer": "john"
+        },
+        {
+          "id": 2,
+          "item": "Beer",
+          "category": "BYO",
+          "claimer": "john"
+        },
+        {
+          "id": 3,
+          "item": "Paper Plates",
+          "category": "Items",
+          "claimer": ""
+        },
+        {
+          "id": "e10f3529-46d4-44e2-bf1c-943296243829",
+          "item": "burgers",
+          "category": "food",
+          "claimer": "dan"
+        },
+        {
+          "id": "b9fbc930-39a4-4107-828e-8725807774c9",
+          "item": "hotdog",
+          "category": "food",
+          "claimer": "dan"
+        },
+        {
+          "id": "6b9955ff-4f7f-4e5c-bbf5-bd378b09252f",
+          "item": "napkins",
+          "category": "Items",
+          "claimer": "greg"
+        },
+        {
+          "id": "a7670fe2-9b07-47ec-b300-80300293f0c7",
+          "item": "cooler",
+          "category": "items",
+          "claimer": "dan"
+        }
+      ]
     }
   ]
 }
