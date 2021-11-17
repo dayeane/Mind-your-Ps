@@ -38,13 +38,13 @@
           "id": 1,
           "item": "Ice",
           "category": "food",
-          "claimer": ""
+          "claimer": "john"
         },
         {
           "id": 2,
           "item": "Beer",
           "category": "BYO",
-          "claimer": ""
+          "claimer": "john"
         },
         {
           "id": 3,
@@ -53,10 +53,28 @@
           "claimer": ""
         },
         {
-          "id": "",
+          "id": "e10f3529-46d4-44e2-bf1c-943296243829",
           "item": "burgers",
           "category": "food",
           "claimer": "dan"
+        },
+        {
+          "id": "b9fbc930-39a4-4107-828e-8725807774c9",
+          "item": "hotdog",
+          "category": "food",
+          "claimer": "dan"
+        },
+        {
+          "id": "6b9955ff-4f7f-4e5c-bbf5-bd378b09252f",
+          "item": "napkins",
+          "category": "Items",
+          "claimer": "greg"
+        },
+        {
+          "id": "367f2218-9075-469b-bf07-e3dc15a7ee4e",
+          "item": "board games",
+          "category": "items",
+          "claimer": "greg"
         }
       ],
       "pictures": []

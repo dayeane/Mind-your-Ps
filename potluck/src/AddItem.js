@@ -1,14 +1,11 @@
 import react, {useState}  from "react"
+import { v4 as uuid } from 'uuid';
 
-function AddItem ( {handleFormSubmit, itemsList, fullData}) {
+function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) {
 
-    const {id} = fullData[0]
-
-    console.log(id)
-    
+    const {id} = selectedEvent    
    
     const [formData, setFormData] = useState ({
-        id:"",
         item:"",
         category:"",
         claimer:"",
@@ -21,18 +18,27 @@ function AddItem ( {handleFormSubmit, itemsList, fullData}) {
     function handleSubmit(e){
         e.preventDefault()
 
-        const updatedList= [...itemsList, formData] 
-        const patchObj= {thingsToBring: updatedList}
+        if (id === 0) return alert("Please select an event")
+
+        const newItem= {
+            id: uuid(),
+            item: formData.item,
+            category: formData.category,
+            claimer: formData.claimer
+        }
 
         fetch (`http://localhost:3001/events/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type" : "application/json"
             },
-            body: JSON.stringify(patchObj)
+            body: JSON.stringify({thingsToBring: [...itemList, newItem]})
         } )
         .then(res => res.json())
-        .then((data)=>handleFormSubmit(data))
+        .then((data)=>{
+            setSelectedEvent(data.thingsToBring)
+            seteShownItems(data.thingsToBring)
+        })
     
     }   
 

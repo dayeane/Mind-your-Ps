@@ -2,26 +2,19 @@ import react, {useState, useEffect} from "react"
 import ItemContainer from "./ItemContainer.js"
 import AddItem from "./AddItem.js"
 
-function ItemsToBring () {
+function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     
-const [itemsList, setItemsList] = useState([])
-const [fullData, setFullData]= useState([])
+
+    
+const itemList=selectedEvent.thingsToBring
+
+const [shownItems, seteShownItems] = useState(itemList)
 
 
-
-useState( () => {
-    fetch( "http://localhost:3001/events")
-    .then(res => res.json())
-    .then((data) => {
-        setItemsList(data[0].thingsToBring)
-        setFullData(data)   
-    })
-}, [])
-
-function handleFormSubmit(newItem) {
-   console.log(newItem)
-    setFullData([newItem, ...fullData])
-}
+// function handleFormSubmit(newItem) {
+//    console.log(newItem)
+//    setSelectedEvent([newItem, ...fullData])
+// }
 
 function handleClaimItem(newClaimer) {
     console.log(newClaimer)
@@ -30,8 +23,15 @@ function handleClaimItem(newClaimer) {
     return (
         <div>
             <h1> Here are items we need!</h1>
-            <ItemContainer handleClaimItem= {handleClaimItem} itemsList= {itemsList}/>
-            <AddItem handleFormSubmit={handleFormSubmit} fullData={fullData} itemsList={itemsList}/>
+            <ItemContainer handleClaimItem= {handleClaimItem} 
+            shownList= {shownItems}
+            seteShownItems= {seteShownItems}
+            selectedEvent={selectedEvent}
+            setSelectedEvent={setSelectedEvent}
+            />
+            <AddItem 
+                // handleFormSubmit={handleFormSubmit} 
+                itemList={itemList} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} seteShownItems={seteShownItems}/>
         </div>
     )
 }
