@@ -5,22 +5,22 @@ import EventInfo from './EventInfo';
 import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
-import ItemsToBring from './ItemsToBring'
-
+import ItemsToBring from './ItemsToBring';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   const databaseURL = 'http://localhost:3001/events';
   
   const [allEvents, setAllEvents] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState([]);
   
-
   useEffect(() => {
   fetch(databaseURL)
   .then(res => res.json())
   .then(eventsData => setAllEvents(eventsData))
   }, [])
   
+  //for retrieving event from API by codeword index
   function codeSubmit(e, eventCode) {
     e.preventDefault();
     const codeName = eventCode;
@@ -31,6 +31,7 @@ function App() {
     } else {
       alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
+      setAllEvents([]);
     }
   }
 
@@ -65,11 +66,26 @@ function App() {
       <h1>POTLUCK</h1>
       <p>Static element: this is the main app container</p>
       <NavBar />
-      <HomeScreen codeSubmit={codeSubmit}/>
-      <EventInfo />
-      <EventCreationForm />
-      <GuestContainer guests={testEvent.guests}/>
-      <ItemsToBring />
+      <Switch>
+        <Route exact path="/">
+          <HomeScreen codeSubmit={codeSubmit}/>
+        </Route>
+        <Route exact path="/info">
+          <EventInfo eventObj={selectedEvent}/>
+        </Route>
+        <Route exact path="/createEvent">
+          <EventCreationForm />
+        </Route>
+        <Route exact path="/guests">
+          <GuestContainer guests={testEvent.guests}/>
+        </Route>
+        <Route exact path="/itemsToBring">
+          <ItemsToBring />
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }
