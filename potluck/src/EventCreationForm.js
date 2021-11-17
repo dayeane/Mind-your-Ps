@@ -6,7 +6,7 @@ function EventCreationForm () {
     //this will fetch 3 random words for creating an event code-word
     let threeWords = '';
     const codeWordGenerator = 'https://random-word-api.herokuapp.com/word?number=3';
-    const databaseURL = 'http://localhost:3000/events';
+    const databaseURL = 'http://localhost:3001/events';
     
     useEffect(() => {
         fetch(codeWordGenerator)
@@ -40,12 +40,7 @@ function EventCreationForm () {
 
     function formSubmitHandler(e) {
         e.preventDefault();
-        console.log("I see that you're trying to submit the form.");
-        console.log("DAVERY NOTE: This submission handler is intended to hookup to a POST-fetch at some point.");
-        console.log("(so don't forget)");
-        console.log("Until then - here's the form data: ");
-        console.log(formData);
-
+        
         const postConfig = {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
@@ -75,19 +70,19 @@ function EventCreationForm () {
 
 
     return (
-        <form onSubmit={(e) => formSubmitHandler(e)} onChange={formChangeHandler} name='newEventForm' id='newEventForm'>
+        <form onSubmit={(e) => formSubmitHandler(e)} name='newEventForm' id='newEventForm'>
             <label for='eventName'>Event name:</label>
-            <input type='text' id='eventName' value={formData.eventName} name='eventName'></input>
+            <input type='text' id='eventName' value={formData.eventName} onChange={formChangeHandler} name='eventName'></input>
             <label for='eventDate'>Event date:</label>
-            <input type='date' id='eventDate' name='eventDate' value={formData.eventDate}></input>
+            <input type='date' id='eventDate' name='eventDate' value={formData.eventDate} onChange={formChangeHandler}></input>
             <label for='eventTime'>Event time:</label>
-            <input type='time' id='eventTime' name='eventTime' value={formData.eventTime}></input>
+            <input type='time' id='eventTime' name='eventTime' value={formData.eventTime} onChange={formChangeHandler}></input>
             <label for='eventDescription'>Event description:</label>
-            <input type='text' id='eventDescription' name='eventDescription' value={formData.eventDescription}></input>
+            <input type='text' id='eventDescription' name='eventDescription' value={formData.eventDescription} onChange={formChangeHandler}></input>
             <label for='eventTheme'>Event theme:</label>
-            <input type='text' id='eventTheme' name='eventTheme' value={formData.eventTheme}></input>
+            <input type='text' id='eventTheme' name='eventTheme' value={formData.eventTheme} onChange={formChangeHandler}></input>
             <label for='eventDressCode'>Event dress code: </label>
-            <select id='eventDressCode' name='eventDressCode' value={formData.eventDressCode}>
+            <select id='eventDressCode' name='eventDressCode' value={formData.eventDressCode} onChange={formChangeHandler}>
                 <option value='formal'>Formal</option>
                 <option value='casual'>Casual</option>
                 <option value='holiday'>Holiday</option>
@@ -97,7 +92,7 @@ function EventCreationForm () {
                 <option value='other'>Other</option>
             </select>
             <label for='eventInviteStructure'>Event invite structure:</label>
-            <select id='eventInviteStructure' name='eventInviteStructure' value={formData.inviteStructure}>
+            <select id='eventInviteStructure' name='eventInviteStructure' value={formData.inviteStructure} onChange={formChangeHandler}>
                 <option value='plus one'>Plus one</option>
                 <option value='invite only'>Invite only</option>
                 <option value='bring your friends'>Bring your friends!</option>
