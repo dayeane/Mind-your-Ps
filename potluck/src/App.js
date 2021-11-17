@@ -8,6 +8,7 @@ import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring'
 
 
+
 function App() {
   const databaseURL = 'http://localhost:3001/events';
   const emptyEvent =  {
@@ -32,11 +33,14 @@ function App() {
     fetch(databaseURL)
     .then(res => res.json())
     .then(eventsData => setAllEvents(eventsData))
-    }, [])
+  }, [])
+
   function codeSubmit(e, eventCode) {
     e.preventDefault();
+
     const codeName = eventCode;
     console.log(eventCode);
+    
     let filterResult = allEvents.filter(eventObj => eventObj.code === codeName)
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
@@ -46,8 +50,6 @@ function App() {
     }
   }
 
- 
-  
   return (
     <div className="App">
       <h1>POTLUCK</h1>
@@ -56,7 +58,7 @@ function App() {
       <HomeScreen codeSubmit={codeSubmit}/>
       <EventInfo />
       <EventCreationForm />
-      <GuestContainer guests={selectedEvent.guests} eventId={selectedEvent.eventId}/>
+      <GuestContainer guests={selectedEvent.guests} eventId={selectedEvent.id}/>
       <ItemsToBring />
     </div>
   );

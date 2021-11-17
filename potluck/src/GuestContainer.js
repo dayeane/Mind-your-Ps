@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import Guest from "./Guest";
 import GuestSearch from "./GuestSearch";
+import GuestCreateForm from "./GuestCreateForm";
 
 function GuestContainer({ guests, eventId }) {
   const [allGuest, setAllGuest] = useState([]);
@@ -18,7 +19,8 @@ function GuestContainer({ guests, eventId }) {
   return (
 
     <>
-      <h2>Guests List</h2>
+      <h2>Guests</h2>
+      <GuestCreateForm allGuest={allGuest} eventId={eventId} setFilteredGuest={setFilteredGuest} setAllGuest={setAllGuest}/>
       <GuestSearch allGuest={allGuest} setFilteredGuest={setFilteredGuest} />
       <table>
         <thead> 
