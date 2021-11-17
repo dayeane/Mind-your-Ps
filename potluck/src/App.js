@@ -28,6 +28,7 @@ function App() {
 
     const codeName = eventCode;
     console.log(eventCode);
+
     
     let filterResult = allEvents.filter(eventObj => eventObj.code === codeName)
     if (filterResult.length === 0) {
@@ -36,8 +37,12 @@ function App() {
       alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
-      setFilteredGuest(filterResult[0].guests)
+      setFilteredGuest(filterResult[0].guests);
     }
+  }
+
+  function updateWithNewEvent(eventObj) {
+    setSelectedEvent(eventObj);
   }
 
   return (
@@ -52,7 +57,7 @@ function App() {
           <EventInfo eventObj={selectedEvent}/>
         </Route>
         <Route exact path="/createEvent">
-          <EventCreationForm />
+          <EventCreationForm updateWithNewEvent={updateWithNewEvent}/>
         </Route>
         <Route exact path="/guests">
           <GuestContainer  allGuest={allGuest}

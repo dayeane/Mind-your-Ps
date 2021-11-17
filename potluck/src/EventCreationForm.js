@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 
-function EventCreationForm () {
+function EventCreationForm ({updateWithNewEvent}) {
 
     //this will fetch 3 random words for creating an event code-word
     let threeWords = '';
@@ -16,19 +16,23 @@ function EventCreationForm () {
             setFormData({...formData, code: threeWords})
             console.log(threeWords);
         })
-    }, [])
+    }, []);
     
     
 
     const [formData, setFormData] = useState({
-        eventName:'',
-        eventDate:'',
-        eventTime:'',
-        eventDescription:'',
-        eventTheme:'',
-        eventDressCode:'',
-        eventInviteStructure:'',
+        name:'',
+        date:'',
+        time:'',
+        description:'',
+        theme:'',
+        dressCode:'',
+        inviteStructure:'',
         code: '',
+        location: '',
+        guests: [],
+        thingsToBring: [],
+        pictures: []
     })
 
     function formChangeHandler(e) {
@@ -49,40 +53,38 @@ function EventCreationForm () {
 
         fetch(databaseURL, postConfig)
         .then(res => res.json())
-        .then(eventObj => {
-            console.log(eventObj);
-            //This needs to be sent to state upstream to be the event that's loaded for all of the other app functionality
-        })
+        .then(eventObj => updateWithNewEvent(eventObj))
+        
 
         setFormData({
-            eventName:'',
-            eventDate:'',
-            eventTime:'',
-            eventDescription:'',
-            eventTheme:'',
-            eventDressCode:'',
-            eventInviteStructure:'',
+            name:'',
+            date:'',
+            time:'',
+            description:'',
+            theme:'',
+            dressCode:'',
+            inviteStructure:'',
+            location: '',
+            guests: [],
+            thingsToBring: [],
+            pictures: []
         });
     }
-    //form essentials:
-    // event name, event theme/type, food items to bring?(other form, probably?), non-food items to bring?, event description
-    // event start time, event location, event end time, dress code, invite structure (plus-one, invite-only, bring your friends)
-
-
+    
     return (
         <form onSubmit={(e) => formSubmitHandler(e)} name='newEventForm' id='newEventForm'>
             <label for='eventName'>Event name:</label>
-            <input type='text' id='eventName' value={formData.eventName} onChange={formChangeHandler} name='eventName'></input>
+            <input type='text' id='eventName' value={formData.name} onChange={formChangeHandler} name='name'></input>
             <label for='eventDate'>Event date:</label>
-            <input type='date' id='eventDate' name='eventDate' value={formData.eventDate} onChange={formChangeHandler}></input>
+            <input type='date' id='eventDate' name='date' value={formData.date} onChange={formChangeHandler}></input>
             <label for='eventTime'>Event time:</label>
-            <input type='time' id='eventTime' name='eventTime' value={formData.eventTime} onChange={formChangeHandler}></input>
+            <input type='time' id='eventTime' name='time' value={formData.time} onChange={formChangeHandler}></input>
             <label for='eventDescription'>Event description:</label>
-            <input type='text' id='eventDescription' name='eventDescription' value={formData.eventDescription} onChange={formChangeHandler}></input>
+            <input type='text' id='eventDescription' name='description' value={formData.description} onChange={formChangeHandler}></input>
             <label for='eventTheme'>Event theme:</label>
-            <input type='text' id='eventTheme' name='eventTheme' value={formData.eventTheme} onChange={formChangeHandler}></input>
+            <input type='text' id='eventTheme' name='theme' value={formData.theme} onChange={formChangeHandler}></input>
             <label for='eventDressCode'>Event dress code: </label>
-            <select id='eventDressCode' name='eventDressCode' value={formData.eventDressCode} onChange={formChangeHandler}>
+            <select id='eventDressCode' name='dressCode' value={formData.dressCode} onChange={formChangeHandler}>
                 <option value='formal'>Formal</option>
                 <option value='casual'>Casual</option>
                 <option value='holiday'>Holiday</option>
@@ -92,14 +94,15 @@ function EventCreationForm () {
                 <option value='other'>Other</option>
             </select>
             <label for='eventInviteStructure'>Event invite structure:</label>
-            <select id='eventInviteStructure' name='eventInviteStructure' value={formData.inviteStructure} onChange={formChangeHandler}>
+            <select id='eventInviteStructure' name='inviteStructure' value={formData.inviteStructure} onChange={formChangeHandler}>
                 <option value='plus one'>Plus one</option>
                 <option value='invite only'>Invite only</option>
                 <option value='bring your friends'>Bring your friends!</option>
             </select>
+            <label for='eventLocation'>Location: </label>
+            <input type='text' id='eventLocation' name='location' value={formData.location} onChange={formChangeHandler}></input>
             <button type='submit' id='submit' name='submit'>Party!</button>
         </form>
-
     )
 }
 
