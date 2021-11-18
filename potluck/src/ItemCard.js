@@ -1,6 +1,6 @@
 import react, {useState} from "react"
 
-function ItemCard ( {itemObj, shownList, seteShownItems, selectedEvent, handleDelete, setSelectedEvent, handleClaimItem }) {
+function ItemCard ( {itemObj, shownList, setShownItems, selectedEvent, handleDelete, setSelectedEvent, handleClaimItem }) {
     
     const {item, category, claimer} = itemObj
 
@@ -38,7 +38,7 @@ function ItemCard ( {itemObj, shownList, seteShownItems, selectedEvent, handleDe
             body:JSON.stringify({thingsToBring: newClaimer})
         })
         .then(res=> res.json())
-        .then((data) => seteShownItems(data.thingsToBring))
+        .then((data) => setShownItems(data.thingsToBring))
     }
 
     return (
