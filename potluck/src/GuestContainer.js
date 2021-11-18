@@ -14,13 +14,13 @@ function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilt
       <h2>Guests</h2>
       <GuestCreateForm allGuest={allGuest} eventId={eventId} setFilteredGuest={setFilteredGuest} setAllGuest={setAllGuest}/>
       <GuestSearch allGuest={allGuest} setFilteredGuest={setFilteredGuest} />
-      <table>
-        <thead> 
+      <table class="table table-striped">
+        <thead class="thead-dark"> 
           <tr>
-            <th>name</th>
-            <th>email</th>
-            <th>phone</th>
-            <th>confirm</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">confirm</th>
           </tr>
         </thead> 
         <tbody>
