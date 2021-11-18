@@ -58,6 +58,27 @@
           "email": "dayeane85@gmail.com",
           "phone": "9548033128",
           "confirm": "true"
+        },
+        {
+          "id": "baf4af6f-b75f-429c-a53a-fe7e1abfce90",
+          "name": "",
+          "email": "",
+          "phone": "",
+          "confirm": "true"
+        },
+        {
+          "id": "f4c7221e-67b4-4429-a4cb-21643c0ad2dd",
+          "name": "",
+          "email": "",
+          "phone": "",
+          "confirm": "true"
+        },
+        {
+          "id": "464bd741-fe03-4556-bb22-eb45706e986b",
+          "name": "",
+          "email": "",
+          "phone": "",
+          "confirm": "true"
         }
       ],
       "thingsToBring": [

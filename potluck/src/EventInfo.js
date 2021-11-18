@@ -14,7 +14,6 @@ function EventInfo({eventObj}) {
     return (
         <div class="card" id="eventInfo">
             <div class="card-header"><h2>EVENT INFO</h2></div>
-            
             <h4>Name: {name}</h4>
             <p>Event code: {code}</p> 
             <p>Description: {description}</p>

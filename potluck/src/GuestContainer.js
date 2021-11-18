@@ -11,12 +11,12 @@ function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilt
   return (
 
     <>
-    <div class="card row" id="eventInfo">
+    <div class="card row">
       <div class="card-header"><h2>Guests</h2></div>
         <GuestCreateForm allGuest={allGuest} eventId={eventId} setFilteredGuest={setFilteredGuest} setAllGuest={setAllGuest}/>
         <GuestSearch allGuest={allGuest} setFilteredGuest={setFilteredGuest} />
         <table class="table table-striped">
-          <thead class="thead-dark"> 
+          <thead class="table-info"> 
             <tr>
               <th scope="col">name</th>
               <th scope="col">email</th>
