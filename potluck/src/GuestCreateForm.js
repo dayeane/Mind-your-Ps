@@ -61,7 +61,7 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
                     <option value="false">false</option>
                 </select>
               
-               <input className="btn btn-info btn-sm" type="submit" value=" + "/>
+               <input className="btn btn-primary" type="submit" value=" Add Guest "/>
 
            </form>
            </div>

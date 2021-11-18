@@ -16,7 +16,7 @@ function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilt
         <GuestCreateForm allGuest={allGuest} eventId={eventId} setFilteredGuest={setFilteredGuest} setAllGuest={setAllGuest}/>
         <GuestSearch allGuest={allGuest} setFilteredGuest={setFilteredGuest} />
         <table className="table table-striped">
-          <thead className="table-info"> 
+          <thead > 
             <tr>
               <th scope="col">name</th>
               <th scope="col">email</th>

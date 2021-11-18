@@ -6,7 +6,7 @@ function ItemContainer ( {handleDelete, shownList, setShownItems, selectedEvent,
     const shownItem = shownList.map((item) => <ItemCard key={item.id} handleDelete= {handleDelete} shownList={shownList} itemObj= {item} setShownItems={setShownItems} selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/>)
     
     return (
-    <div className="card row">
+    <div className="card row mt-5">
         <h2 className= "card-header">Items</h2>
 
         <table className="table table-striped">
