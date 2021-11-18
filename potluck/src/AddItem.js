@@ -41,24 +41,21 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
     }   
 
     return (
-      <>
-        <h2>Here is a form to add an item</h2>
-        <div>
+      <div className="row">
+        <h2 className="col-12">Add an Item</h2>
+        <div className= "col-12">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="item">Item</label>
-                    <input onChange={handleChange} value={formData.item} type="text" name="item"/>
-                    <label htmlFor="category">Category</label>
-                    <input onChange={handleChange} value={formData.category} type="text" name="category"/>
-                    <label htmlFor="claimer">Owner</label>
-                    <input onChange={handleChange} value={formData.claimer} type="text" name="claimer"/>
+                <div className= "col-12">
+                    <input placeholder="item" onChange={handleChange} value={formData.item} type="text" name="item"/>
+                    <input placeholder="category" onChange={handleChange} value={formData.category} type="text" name="category"/>
+                    <input placeholder="clam" onChange={handleChange} value={formData.claimer} type="text" name="claimer"/>
                 </div>
-                <button type="submit">
+                <button className="btn btn-primary" type="submit">
                     Add Item
                 </button>
             </form>
         </div>
-      </>
+      </div>
     )
 }
 

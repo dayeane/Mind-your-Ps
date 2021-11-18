@@ -11,26 +11,26 @@ function ItemContainer ( {handleDelete, shownList, seteShownItems, selectedEvent
     )
     
     return (
-    <>
-        <h2>Here is the list of items</h2>
+    <div className="card row">
+        <h2 className= "card-header">Items</h2>
 
-        <table>
-            <tbody>
-                <tr>
-                    <th>
+        <table className="table table-striped">
+            <tbody className="thead-dark" >
+                <tr >
+                    <th scope="col">
                         <h3>Item</h3>
                     </th>
-                    <th>
+                    <th scope="col">
                         <h3>Category</h3>
                     </th>
-                    <th>
+                    <th scope="col">
                         <h3>Owner</h3>
                     </th>
                 </tr>
                 {shownItem}
             </tbody>
         </table>
-    </>
+    </div>
         
     )
 }

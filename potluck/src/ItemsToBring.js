@@ -38,15 +38,14 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     return (
         <div>
             <h1> Here are items we need!</h1>
+            <AddItem  
+                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} seteShownItems={seteShownItems}/>
             <ItemContainer handleClaimItem= {handleClaimItem} 
                            shownList= {shownItems}
                            seteShownItems= {seteShownItems}
                            selectedEvent={selectedEvent}
                            setSelectedEvent={setSelectedEvent}
                            handleDelete={handleDelete}/>
-            <AddItem 
-                // handleFormSubmit={handleFormSubmit} 
-                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} seteShownItems={seteShownItems}/>
         </div>
     )
 }
