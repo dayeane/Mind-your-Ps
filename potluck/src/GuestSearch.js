@@ -40,7 +40,9 @@ function GuestSearch({setFilteredGuest, allGuest}) {
 
     return(
      <>
-     <h2>Guest Search</h2>
+     
+     <div class="card col-12 mt-5 mb-2" >
+         <div class="card-header"><h2>Search Guest</h2></div>
         <form>
             <label>Name:</label>
             <input onChange={handleSearch} ref={name} type="text" id="name" name="name" />
@@ -60,6 +62,7 @@ function GuestSearch({setFilteredGuest, allGuest}) {
             </select>
 
         </form>
+        </div>
       </>
     )
 }

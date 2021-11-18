@@ -11,16 +11,16 @@ function HomeScreen({codeSubmit}) {
     }
 
     return (
-        <div id="HomeScreen">
-            <h2>HOME</h2>
-
-            <form name='codeForm' onSubmit={(e) => codeSubmit(e, eventCode)}>
+        <div className="row" id="HomeScreen">
+            <h2 class=" col-3">HOME</h2>
+            <form class=" col-9" name='codeForm' onSubmit={(e) => codeSubmit(e, eventCode)}>
                 <label for='code'>Event code:</label>
                 <input onChange={codeChange} type='text' id='code' name='code' value={eventCode}></input>
                 <button type='submit' id='codeSubmit' name='codeSubmit'>Submit Code</button>
             </form>
-            <p></p>
-            <Link to='/createEvent'>Create New Event</Link>
+            <div className="col-12">
+                <Link to='/createEvent'>Create New Event</Link>
+            </div>
 
         </div>
     )

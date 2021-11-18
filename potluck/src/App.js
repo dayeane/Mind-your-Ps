@@ -55,7 +55,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>POTLUCK</h1>
       <NavBar />
       <Switch>
         <Route exact path="/">
