@@ -3,16 +3,16 @@ function EventInfo({eventObj}) {
     console.log(eventObj);
     if (eventObj?.code === undefined) {
         return (
-            <>
-                <h2>EVENT INFO</h2>
+            <div className="card mt-5">
+                <h2 className="card-header">EVENT INFO</h2>
                 <p>Please either select an event with your event code or create a new event to manage :)</p>
-            </>
+            </div>
         )
     }
     let {name, time, code, date, description, location, inviteStructure, dressCode} = {...eventObj};
     
     return (
-        <div class="card" id="eventInfo">
+        <div class="card mt-5" id="eventInfo">
             <div class="card-header"><h2>EVENT INFO</h2></div>
             
             <h4>Name: {name}</h4>

@@ -3,18 +3,14 @@ import ItemContainer from "./ItemContainer.js"
 import AddItem from "./AddItem.js"
 
 function ItemsToBring ({selectedEvent, setSelectedEvent}) {
+    const [shownItems, setShownItems] = useState(selectedEvent.thingsToBring)
     
-    // const itemList=selectedEvent.thingsToBring
-
-    // console.log(itemList)
-
-    const [shownItems, seteShownItems] = useState(selectedEvent.thingsToBring)
-
-    // console.log(shownItems)
+    if (selectedEvent.length === 0) {
+        return (<p>Please either select an event to manage or create a new event :)</p>)
+    }
 
     function handleDelete(id) {
-        const updatedItemList= shownItems.filter((itemObj)=> itemObj.id !== id)
-        debugger
+        const updatedItemList= shownItems.filter((itemObj)=> itemObj.id !== id)  
         fetch(`http://localhost:3001/events/${selectedEvent.id}`, {
             method: "PATCH",
             headers: {
@@ -25,11 +21,10 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
         .then(res=> res.json())
         .then((data)=> {
             console.log(data)
-            seteShownItems(data.thingsToBring)
+            setShownItems(data.thingsToBring)
             setSelectedEvent(data)
         })
     }
-
 
     function handleClaimItem(newClaimer) {
         console.log(newClaimer)
@@ -40,13 +35,12 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
             <h1> Here are items we need!</h1>
             <ItemContainer handleClaimItem= {handleClaimItem} 
                            shownList= {shownItems}
-                           seteShownItems= {seteShownItems}
+                           setShownItems= {setShownItems}
                            selectedEvent={selectedEvent}
                            setSelectedEvent={setSelectedEvent}
                            handleDelete={handleDelete}/>
             <AddItem 
-                // handleFormSubmit={handleFormSubmit} 
-                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} seteShownItems={seteShownItems}/>
+                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} setShownItems={setShownItems}/>
         </div>
     )
 }
