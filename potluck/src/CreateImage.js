@@ -37,11 +37,11 @@ return(
 <>
      <h2> New Photo</h2>
         <form onSubmit={handleNewPhoto}>
-            <div class="form-group">
+            <div className="form-group">
                 <label></label>
                 <input placeholder="Name" className="form-control"  ref={name} type="text" id="name" name="name" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label></label>
               <input placeholder="URL" className="form-control"  ref={url} type="text" id="url" name="url" />
             </div>

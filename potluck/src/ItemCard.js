@@ -48,7 +48,7 @@ function ItemCard ( {itemObj, shownList, setShownItems, selectedEvent, handleDel
             <td>{claimer}</td>
             <td className= "row">
                 <form onSubmit={(e)=> handleClaimerSubmit(e, item)}>
-                    <input placeHolder="Claim Item" type="text" name="claimer" onChange={handleChangeClaimer} value={nameOfClaimer}/>
+                    <input placeholder="Claim Item" type="text" name="claimer" onChange={handleChangeClaimer} value={nameOfClaimer}/>
                     <button type="submit">Claim</button>
                 </form>
             </td>

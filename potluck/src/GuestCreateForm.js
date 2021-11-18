@@ -41,8 +41,8 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
 
     return(
         <>
-          <div class="card col-12 mt-5 mb-2" >
-         <div class="card-header"><h2>Add a New Guest</h2></div>
+          <div className="card col-12 mt-5 mb-2" >
+         <div className="card-header"><h2>Add a New Guest</h2></div>
            <form onSubmit={handleNewGuestSubmit}>
                
                <label></label>
