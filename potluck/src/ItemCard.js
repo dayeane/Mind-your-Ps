@@ -42,20 +42,18 @@ function ItemCard ( {itemObj, shownList, setShownItems, selectedEvent, handleDel
     }
 
     return (
-      <div className= "row">
-        <tr className="col-12">
-            <td className="col-2">{item}</td>
-            <td className="col-2">{category}</td>
-            <td className="col-2">{claimer}</td>
+        <tr>
+            <td>{item}</td>
+            <td>{category}</td>
+            <td>{claimer}</td>
             <td className= "row">
                 <form onSubmit={(e)=> handleClaimerSubmit(e, item)}>
-                    <input className="col-2" placeHolder="Claim Item" type="text" name="claimer" onChange={handleChangeClaimer} value={nameOfClaimer}/>
-                    <button className="col-2" type="submit">Claim</button>
+                    <input placeHolder="Claim Item" type="text" name="claimer" onChange={handleChangeClaimer} value={nameOfClaimer}/>
+                    <button type="submit">Claim</button>
                 </form>
             </td>
-            <td className="col-2"><button onClick={()=> handleDelete(itemObj.id)}>Delete here</button></td>
+            <td><button onClick={()=> handleDelete(itemObj.id)}>Delete here</button></td>
         </tr>
-     </div>
     )
 }
 

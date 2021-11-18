@@ -10,7 +10,7 @@ function ItemContainer ( {handleDelete, shownList, setShownItems, selectedEvent,
         <h2 className= "card-header">Items</h2>
 
         <table className="table table-striped">
-            <tbody className="thead-dark" >
+            <thead className="thead-dark" >
                 <tr >
                     <th scope="col">
                         <h3>Item</h3>
@@ -21,7 +21,15 @@ function ItemContainer ( {handleDelete, shownList, setShownItems, selectedEvent,
                     <th scope="col">
                         <h3>Owner</h3>
                     </th>
+                    <th scope="col">
+                        <h3>Owner</h3>
+                    </th>
+                    <th scope="col">
+                        <h3>Owner</h3>
+                    </th>
                 </tr>
+            </thead>
+            <tbody>
                 {shownItem}
             </tbody>
         </table>
