@@ -6,8 +6,8 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     const [shownItems, setShownItems] = useState(selectedEvent.thingsToBring)
     
     if (selectedEvent.length === 0) {
-        return (<p>Please either select an event to manage or create a new event :)</p>)
-    }
+        return (<p>Please either select an event to manage or create a new event </p>)}
+        
 
     function handleDelete(id) {
         const updatedItemList= shownItems.filter((itemObj)=> itemObj.id !== id)  
@@ -41,9 +41,8 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
                            selectedEvent={selectedEvent}
                            setSelectedEvent={setSelectedEvent}
                            handleDelete={handleDelete}/>
-           
         </div>
-    )
-}
+        )
+    }
 
 export default ItemsToBring
