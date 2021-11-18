@@ -35,7 +35,7 @@ function App() {
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      alert('Event found! Loaded into event manager :)');
+      //alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests);   

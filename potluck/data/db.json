@@ -112,7 +112,15 @@
       "code": "horniness-warrens-culinarian",
       "location": "https://goo.gl/maps/iTH3v58KpbQ9Gb9B9",
       "id": 5,
-      "guests": [],
+      "guests": [
+        {
+          "id": "f080dc6d-05ed-4f54-978c-964751b153fc",
+          "name": "Johnny Appleseed",
+          "email": "treesForFrees@arboristenthusiasts.com",
+          "phone": "555-555-555",
+          "confirm": "true"
+        }
+      ],
       "thingsToBring": [],
       "pictures": []
     },
