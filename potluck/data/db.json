@@ -54,13 +54,6 @@
           "email": "david@example.com",
           "phone": "5554312249",
           "confirm": "false"
-        },
-        {
-          "id": "2e2d8fb0-e8e2-4219-889e-850c365ebbd9",
-          "name": "Dayeane66",
-          "email": "dayeane85@gmail.com",
-          "phone": "9548033128",
-          "confirm": "true"
         }
       ],
       "thingsToBring": [
@@ -83,6 +76,104 @@
           "claimer": ""
         }
       ]
+    },
+    {
+      "name": "test data",
+      "date": "2021-11-26",
+      "time": "13:05",
+      "description": "this is simple test data",
+      "theme": "testing a web app",
+      "dressCode": "themed",
+      "inviteStructure": "bring your friends",
+      "code": "cloxacillin-noncorporate-eximious",
+      "id": 2,
+      "location": "not entered",
+      "guests": [],
+      "thingsToBring": [],
+      "pictures": []
+    },
+    {
+      "name": "test data",
+      "date": "2021-11-18",
+      "time": "14:12",
+      "description": "this is simple test data",
+      "theme": "testing a web app",
+      "dressCode": "pajamas",
+      "inviteStructure": "bring your friends",
+      "code": "sawers-laevo-exclusives",
+      "id": 3,
+      "location": "not entered",
+      "guests": [],
+      "thingsToBring": [],
+      "pictures": []
+    },
+    {
+      "name": "hopefully last POST test",
+      "date": "2021-12-11",
+      "time": "13:19",
+      "description": "getting post to work is fun!",
+      "theme": "software testing",
+      "dressCode": "holiday",
+      "inviteStructure": "bring your friends",
+      "code": "ptomains-shagging-restimulated",
+      "id": 4,
+      "location": "not entered",
+      "guests": [],
+      "thingsToBring": [],
+      "pictures": []
+    },
+    {
+      "name": "Death Valley Beach Party!!!",
+      "date": "2021-12-25",
+      "time": "02:33",
+      "description": "You can bring a swimsuit - but there's no water! Bring lots of beer and sunscreen.",
+      "theme": "Beach party!",
+      "dressCode": "pool",
+      "inviteStructure": "bring your friends",
+      "code": "horniness-warrens-culinarian",
+      "location": "https://goo.gl/maps/iTH3v58KpbQ9Gb9B9",
+      "id": 5,
+      "guests": [
+        {
+          "id": "f080dc6d-05ed-4f54-978c-964751b153fc",
+          "name": "Johnny Appleseed",
+          "email": "treesForFrees@arboristenthusiasts.com",
+          "phone": "555-555-555",
+          "confirm": "true"
+        }
+      ],
+      "thingsToBring": [],
+      "pictures": []
+    },
+    {
+      "name": "test for event object structure",
+      "date": "2021-12-03",
+      "time": "14:45",
+      "description": "I had a typo for 'location' before - hopefully this will fix that. Also, it should initialize ALL of the eventObj properties (guests/pictures/thingsToBring), so that their respective forms have a target to add more entries to.",
+      "theme": "code -> debug -> polish -> debug -> debug -> ... -> still debugging",
+      "dressCode": "other",
+      "inviteStructure": "invite only",
+      "code": "anticrime-covalences-yah",
+      "location": "https://goo.gl/maps/dvw61HaTNKxbptu19",
+      "guests": [
+        {
+          "id": "2568f5dd-42df-4d22-ab23-1aeb8371b16f",
+          "name": "AddedGuest1",
+          "email": "email@totallyrealemail.com",
+          "phone": "555-911-0000",
+          "confirm": "false"
+        },
+        {
+          "id": "f5e88e44-2ace-4a3b-b606-553dac6f4bb6",
+          "name": "David Bowie",
+          "email": "garethTheGobboKing69@labrynthmovie.com",
+          "phone": "555-694-2024",
+          "confirm": "true"
+        }
+      ],
+      "thingsToBring": [],
+      "pictures": [],
+      "id": 6
     }
   ]
 }

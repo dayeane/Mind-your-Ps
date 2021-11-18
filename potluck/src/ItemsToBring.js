@@ -7,7 +7,7 @@ function ItemsToBring () {
 const [itemsList, setItemsList] = useState([])
 
 useState( () => {
-    fetch( "http://localhost:3000/events")
+    fetch( "http://localhost:3001/events")
     .then(res => res.json())
     .then((data) => setItemsList(data[0].thingsToBring))
 }, [])

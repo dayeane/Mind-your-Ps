@@ -6,9 +6,8 @@ import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring';
-import { Switch, Route } from 'react-router-dom';
 import Photos from './Photos';
-// import CreateImage from './CreateImage';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 
 function App() {
@@ -18,8 +17,9 @@ function App() {
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
   const [allEventPhotos, setAllEventPhotos] = useState(selectedEvent.photos)
-  // const [selectedEvent, setSelectedEvent] = useState([]);
   
+  const history = useHistory();
+      
   useEffect(() => {
     fetch(databaseURL)
     .then(res => res.json())
@@ -32,25 +32,30 @@ function App() {
 
     const codeName = eventCode;
     console.log(eventCode);
+
     
     let filterResult = allEvents.filter(eventObj => eventObj.code === codeName)
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      // alert('Event found! Loaded into event manager :)');
+      //alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests)
       setAllEventPhotos(filterResult[0].photos)
       setAllEvents([]);
+      history.push('/info');
     }
   }
   console.log(selectedEvent.id)
 
+  function updateWithNewEvent(eventObj) {
+    setSelectedEvent(eventObj);
+  }
+
   return (
     <div className="App">
       <h1>POTLUCK</h1>
-      <p>Static element: this is the main app container</p>
       <NavBar />
       <Switch>
         <Route exact path="/">
@@ -60,7 +65,7 @@ function App() {
           <EventInfo eventObj={selectedEvent}/>
         </Route>
         <Route exact path="/createEvent">
-          <EventCreationForm />
+          <EventCreationForm updateWithNewEvent={updateWithNewEvent}/>
         </Route>
         <Route exact path="/guests">
           <GuestContainer  allGuest={allGuest}
