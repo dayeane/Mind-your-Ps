@@ -41,8 +41,6 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
                            selectedEvent={selectedEvent}
                            setSelectedEvent={setSelectedEvent}
                            handleDelete={handleDelete}/>
-            <AddItem 
-                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} setShownItems={setShownItems}/>
         </div>
     )
 }
