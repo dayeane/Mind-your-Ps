@@ -8,6 +8,7 @@ import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring';
 import { Switch, Route } from 'react-router-dom';
 import Photos from './Photos';
+// import CreateImage from './CreateImage';
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
       setAllEvents([]);
     }
   }
-  
+  console.log(selectedEvent.id)
 
   return (
     <div className="App">
@@ -73,7 +74,7 @@ function App() {
           <ItemsToBring />
         </Route>
         <Route exact path="/photos">
-          <Photos allEventPhotos={allEventPhotos} />
+          <Photos allEventPhotos={allEventPhotos} setAllEventPhotos={setAllEventPhotos} eventId={selectedEvent.id}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

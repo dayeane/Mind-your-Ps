@@ -12,20 +12,25 @@
       "inviteStructure": "Plus-one",
       "location": "Zoom call",
       "photos": [
-        { 
-          "id": 1 ,  
-          "name":"Firulais Birthday ", 
-          "url":"https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y"
+        {
+          "id": 1,
+          "name": "Firulais Birthday ",
+          "url": "https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y"
         },
-        { 
-          "id": 2 ,  
-          "name":"Katie Wedding", 
-          "url":"https://i.picsum.photos/id/1013/4256/2832.jpg?hmac=UmYgZfqY_sNtHdug0Gd73bHFyf1VvzFWzPXSr5VTnDA"
+        {
+          "id": 2,
+          "name": "Katie Wedding",
+          "url": "https://i.picsum.photos/id/1013/4256/2832.jpg?hmac=UmYgZfqY_sNtHdug0Gd73bHFyf1VvzFWzPXSr5VTnDA"
         },
-        { 
-          "id": 3,   
-          "name":"Holiday Trip", 
-          "url":"https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
+        {
+          "id": 3,
+          "name": "Holiday Trip",
+          "url": "https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
+        },
+        {
+          "id": "1c6b1aa0-5d3b-48cb-9c32-7b022e38bd9a",
+          "name": "juan",
+          "url": "https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
         }
       ],
       "guests": [

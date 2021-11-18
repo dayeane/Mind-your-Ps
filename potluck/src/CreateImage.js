@@ -1,21 +1,50 @@
-import React from "react";
+import {useRef} from "react";
+import { v4 as uuid } from 'uuid';
 
-function CreateImage(params) {
 
+function CreateImage({ eventId, allEventPhotos, setAllEventPhotos}) {
+
+  const id = useRef('')
+  const name = useRef('')
+  const url = useRef('')
+
+  function handleNewPhoto(e) {
+    e.preventDefault();
+
+    if (eventId === 0) return alert ("please try again")
+
+    const newPhoto = {
+      id: uuid(),
+      name: name.current.value,
+      url: url.current.value,
+    }
+
+    console.log(eventId)
+    fetch(`http://localhost:3001/events/${eventId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ photos: [...allEventPhotos,newPhoto] })
+    })
+    .then(res => res.json())
+    .then(data => setAllEventPhotos(data.photos))
+
+    e.currentTarget.reset()
+  }
+  
 return(
 <>
-     <h2>Photo Upload</h2>
-        <form>
-            <label>id:</label>
-            <input type="text" id="id" name="id" />
+     <h2>Add New Photo</h2>
+        <form onSubmit={handleNewPhoto}>
 
             <label>Name:</label>
-            <input   type="text" id="name" name="name" />
+            <input ref={name} type="text" id="name" name="name" />
 
             <label>Url:</label>
-            <input type="text" id="url" name="url" />
+            <input ref={url} type="text" id="url" name="url" />
 
-            <btn>Upload</btn>
+            <input type="submit" value="Add Photo"/>
 
         </form>
       </>
