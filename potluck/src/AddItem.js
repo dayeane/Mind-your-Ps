@@ -27,6 +27,8 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
             claimer: formData.claimer
         }
 
+        console.log(itemList)
+        
         fetch (`http://localhost:3001/events/${id}`, {
             method: "PATCH",
             headers: {

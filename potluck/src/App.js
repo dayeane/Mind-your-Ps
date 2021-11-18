@@ -15,8 +15,7 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState([]);
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
-  // const [selectedEvent, setSelectedEvent] = useState([]);
-  
+    
   useEffect(() => {
     fetch(databaseURL)
     .then(res => res.json())
@@ -29,23 +28,26 @@ function App() {
 
     const codeName = eventCode;
     console.log(eventCode);
+
     
     let filterResult = allEvents.filter(eventObj => eventObj.code === codeName)
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      // alert('Event found! Loaded into event manager :)');
+      alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
-      setFilteredGuest(filterResult[0].guests)
-      setAllEvents([]);
+      setFilteredGuest(filterResult[0].guests);
     }
+  }
+
+  function updateWithNewEvent(eventObj) {
+    setSelectedEvent(eventObj);
   }
 
   return (
     <div className="App">
       <h1>POTLUCK</h1>
-      <p>Static element: this is the main app container</p>
       <NavBar />
       <Switch>
         <Route exact path="/">
@@ -55,7 +57,7 @@ function App() {
           <EventInfo eventObj={selectedEvent}/>
         </Route>
         <Route exact path="/createEvent">
-          <EventCreationForm />
+          <EventCreationForm updateWithNewEvent={updateWithNewEvent}/>
         </Route>
         <Route exact path="/guests">
           <GuestContainer  allGuest={allGuest}

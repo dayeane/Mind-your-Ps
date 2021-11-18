@@ -3,14 +3,19 @@ import ItemContainer from "./ItemContainer.js"
 import AddItem from "./AddItem.js"
 
 function ItemsToBring ({selectedEvent, setSelectedEvent}) {
-    
-const {id}= selectedEvent
 
+const {id}= selectedEvent
+  
 const itemList=selectedEvent.thingsToBring
+
+console.log(itemList)
 
 const [shownItems, seteShownItems] = useState(itemList)
 
+console.log(shownItems)
+
 function handleDelete(deleteItemObj) {
+
     
     const updatedItemList= itemList.filter((itemObj)=> itemObj.item !== deleteItemObj)
     
@@ -19,7 +24,7 @@ function handleDelete(deleteItemObj) {
         headers: {
             "Content-Type" : "application/json"
         },
-        body:JSON.stringify({updatedItemList})
+        body:JSON.stringify({thingsToBring: updatedItemList})
     })
     .then(res=> res.json())
     .then((data)=> console.log(data))

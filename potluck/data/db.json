@@ -53,39 +53,33 @@
           "claimer": ""
         },
         {
-          "id": "e10f3529-46d4-44e2-bf1c-943296243829",
+          "id": "025f6a84-8dee-4447-9f1b-47331c7324fd",
+          "item": "chicken",
+          "category": "items",
+          "claimer": ""
+        },
+        {
+          "id": "c3167dff-660d-49e8-8201-4e97881e089c",
           "item": "burgers",
           "category": "food",
           "claimer": "dan"
         },
         {
-          "id": "b9fbc930-39a4-4107-828e-8725807774c9",
-          "item": "hotdog",
-          "category": "food",
-          "claimer": "dan"
-        },
-        {
-          "id": "6b9955ff-4f7f-4e5c-bbf5-bd378b09252f",
-          "item": "napkins",
-          "category": "Items",
-          "claimer": "greg"
-        },
-        {
-          "id": "367f2218-9075-469b-bf07-e3dc15a7ee4e",
+          "id": "82127ffd-0f7e-4c26-ac97-094cf6ac1d72",
           "item": "board games",
           "category": "items",
-          "claimer": "greg"
+          "claimer": ""
         },
         {
-          "id": "a7670fe2-9b07-47ec-b300-80300293f0c7",
+          "id": "9175c826-c21f-4eba-b57f-1a7873b3eac3",
           "item": "cooler",
           "category": "items",
-          "claimer": "dan"
+          "claimer": ""
         },
         {
-          "id": "834d9250-87e1-4c19-afd1-d067edba5377",
-          "item": "chicken",
-          "category": "food",
+          "id": "42315027-ddd4-42a9-809d-bf49b759cd2e",
+          "item": "napkins",
+          "category": "Items",
           "claimer": ""
         }
       ],
@@ -110,27 +104,15 @@
           "claimer": ""
         },
         {
-          "id": "e10f3529-46d4-44e2-bf1c-943296243829",
+          "id": "025f6a84-8dee-4447-9f1b-47331c7324fd",
+          "item": "chicken",
+          "category": "items",
+          "claimer": ""
+        },
+        {
+          "id": "c3167dff-660d-49e8-8201-4e97881e089c",
           "item": "burgers",
           "category": "food",
-          "claimer": "dan"
-        },
-        {
-          "id": "b9fbc930-39a4-4107-828e-8725807774c9",
-          "item": "hotdog",
-          "category": "food",
-          "claimer": "dan"
-        },
-        {
-          "id": "6b9955ff-4f7f-4e5c-bbf5-bd378b09252f",
-          "item": "napkins",
-          "category": "Items",
-          "claimer": "greg"
-        },
-        {
-          "id": "a7670fe2-9b07-47ec-b300-80300293f0c7",
-          "item": "cooler",
-          "category": "items",
           "claimer": "dan"
         }
       ]
