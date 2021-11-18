@@ -76,7 +76,7 @@ function App() {
                             eventId={selectedEvent.id}/>
         </Route>
         <Route exact path="/itemsToBring">
-          <ItemsToBring />
+          <ItemsToBring selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/>
         </Route>
         <Route exact path="/photos">
           <Photos allEventPhotos={allEventPhotos} setAllEventPhotos={setAllEventPhotos} eventId={selectedEvent.id}/>
