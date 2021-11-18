@@ -10,6 +10,14 @@
       "theme": "Software launch party",
       "dressCode": "Themed",
       "inviteStructure": "Plus-one",
+      "location": "Zoom call",
+      "photos": [
+        {
+          "id": "0a535efc-7e0e-469d-af9f-8cc0996ff104",
+          "name": "grace and sal",
+          "url": "https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
+        }
+      ],
       "guests": [
         {
           "id": 1,
@@ -31,6 +39,20 @@
           "email": "david@example.com",
           "phone": "5554312249",
           "confirm": "false"
+        },
+        {
+          "id": "52a8163c-721f-4f73-8643-2bcec666245b",
+          "name": "Dayeane",
+          "email": "dayeane85@gmail.com",
+          "phone": "9548033128",
+          "confirm": "true"
+        },
+        {
+          "id": "e19a0b18-dc1a-453f-aea9-135ad593bae8",
+          "name": "Dayeane123",
+          "email": "dayeane85@gmail.com",
+          "phone": "9548033128",
+          "confirm": "true"
         }
       ],
       "thingsToBring": [
@@ -51,9 +73,8 @@
           "item": "Paper Plates",
           "category": "Items",
           "claimer": ""
-        }      
-      ],
-      "pictures": []
+        }
+      ]
     },
     {
       "name": "test data",
@@ -68,7 +89,7 @@
       "location": "not entered",
       "guests": [],
       "thingsToBring": [],
-      "pictures": []
+      "photos": []
     },
     {
       "name": "test data",
@@ -83,7 +104,7 @@
       "location": "not entered",
       "guests": [],
       "thingsToBring": [],
-      "pictures": []
+      "photos": []
     },
     {
       "name": "hopefully last POST test",
@@ -98,7 +119,7 @@
       "location": "not entered",
       "guests": [],
       "thingsToBring": [],
-      "pictures": []
+      "photos": []
     },
     {
       "name": "Death Valley Beach Party!!!",
@@ -121,7 +142,7 @@
         }
       ],
       "thingsToBring": [],
-      "pictures": []
+      "photos": []
     },
     {
       "name": "test for event object structure",
@@ -147,7 +168,7 @@
           "claimer": ""
         }
       ],
-      "pictures": []
+      "photos": []
     }
   ]
 }

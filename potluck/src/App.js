@@ -6,6 +6,7 @@ import EventCreationForm from './EventCreationForm';
 import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring';
+import Photos from './Photos';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 
@@ -15,6 +16,8 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState([]);
   const [allGuest, setAllGuest] = useState(selectedEvent.guests);
   const [filteredGuest, setFilteredGuest] = useState(selectedEvent.guests);
+  const [allEventPhotos, setAllEventPhotos] = useState(selectedEvent.photos)
+  
   const history = useHistory();
       
   useEffect(() => {
@@ -38,10 +41,13 @@ function App() {
       //alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
-      setFilteredGuest(filterResult[0].guests);   
+      setFilteredGuest(filterResult[0].guests)
+      setAllEventPhotos(filterResult[0].photos)
+      setAllEvents([]);
       history.push('/info');
     }
   }
+  console.log(selectedEvent.id)
 
   function updateWithNewEvent(eventObj) {
     setSelectedEvent(eventObj);
@@ -71,6 +77,9 @@ function App() {
         </Route>
         <Route exact path="/itemsToBring">
           <ItemsToBring selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/>
+        </Route>
+        <Route exact path="/photos">
+          <Photos allEventPhotos={allEventPhotos} setAllEventPhotos={setAllEventPhotos} eventId={selectedEvent.id}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
