@@ -63,24 +63,6 @@
           "item": "burgers",
           "category": "food",
           "claimer": "dan"
-        },
-        {
-          "id": "82127ffd-0f7e-4c26-ac97-094cf6ac1d72",
-          "item": "board games",
-          "category": "items",
-          "claimer": ""
-        },
-        {
-          "id": "9175c826-c21f-4eba-b57f-1a7873b3eac3",
-          "item": "cooler",
-          "category": "items",
-          "claimer": ""
-        },
-        {
-          "id": "42315027-ddd4-42a9-809d-bf49b759cd2e",
-          "item": "napkins",
-          "category": "Items",
-          "claimer": ""
         }
       ],
       "pictures": [],

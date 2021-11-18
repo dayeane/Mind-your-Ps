@@ -27,7 +27,10 @@ function handleDelete(deleteItemObj) {
         body:JSON.stringify({thingsToBring: updatedItemList})
     })
     .then(res=> res.json())
-    .then((data)=> console.log(data))
+    .then((data)=> {
+        seteShownItems(data.thingsToBring)
+        setSelectedEvent(data.thingsToBring)
+    })
     
     seteShownItems(updatedItemList)
   }
