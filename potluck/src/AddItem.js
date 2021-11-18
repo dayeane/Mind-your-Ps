@@ -41,7 +41,7 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, setShownItems}) {
     }   
 
     return (
-      <div className="row">
+      <div className="row mt-5">
         <h2 className="col-12">Add an Item</h2>
         <div className= "col-12">
             <form onSubmit={handleSubmit}>

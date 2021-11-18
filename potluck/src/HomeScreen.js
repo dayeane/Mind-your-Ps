@@ -17,7 +17,7 @@ function HomeScreen({codeSubmit}) {
             </div>
             <form className="form mt-5" name='codeForm' onSubmit={(e) => codeSubmit(e, eventCode)}>
                 <input onChange={codeChange} type='text' id='code' name='code' placeholder="Enter event code" value={eventCode}></input>
-                <button type='submit' id='codeSubmit' name='codeSubmit'>Submit Code</button>
+                <button  className="btn btn-primary" type='submit' id='codeSubmit' name='codeSubmit'>Submit Code</button>
             </form>
             <div className="col-12 mt-5">
                 <Link to='/createEvent'>Create New Event</Link>

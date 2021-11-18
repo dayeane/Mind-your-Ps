@@ -52,7 +52,7 @@ function ItemCard ( {itemObj, shownList, setShownItems, selectedEvent, handleDel
                     <button type="submit">Claim</button>
                 </form>
             </td>
-            <td><button onClick={()=> handleDelete(itemObj.id)}>Delete here</button></td>
+            <td><button onClick={()=> handleDelete(itemObj.id)}>Delete</button></td>
         </tr>
     )
 }

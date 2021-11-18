@@ -46,7 +46,7 @@ return(
               <input placeholder="URL" className="form-control"  ref={url} type="text" id="url" name="url" />
             </div>
 
-            <button  className="btn btn-info" type="submit" value="Add Photo">submit</button>
+            <button  className="btn btn-primary" type="submit" value="Add Photo">submit</button>
 
         </form>
       </>
