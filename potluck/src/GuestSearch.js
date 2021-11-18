@@ -41,17 +41,17 @@ function GuestSearch({setFilteredGuest, allGuest}) {
     return(
      <>
      
-     <div class="card col-12 mt-5 mb-2" >
+     <div class="card col-12 mt-4 mb-2" >
          <div class="card-header"><h2>Search Guest</h2></div>
         <form>
-            <label>Name:</label>
-            <input onChange={handleSearch} ref={name} type="text" id="name" name="name" />
+            <label></label>
+            <input  placeholder="Name" onChange={handleSearch} ref={name} type="text" id="name" name="name" />
 
-            <label>Email:</label>
-            <input  onChange={handleSearch} ref={email} type="text" id="email" name="email" />
+            <label></label>
+            <input  placeholder="Email" onChange={handleSearch} ref={email} type="text" id="email" name="email" />
 
-            <label>Phone:</label>
-            <input onChange={handleSearch} ref={phone} type="text" id="phone" name="phone" />
+            <label></label>
+            <input placeholder="Phone" onChange={handleSearch} ref={phone} type="text" id="phone" name="phone" />
 
             <label>Its Confirmed?:</label>
 

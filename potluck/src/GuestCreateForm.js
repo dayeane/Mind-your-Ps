@@ -45,14 +45,14 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
          <div class="card-header"><h2>Add a New Guest</h2></div>
            <form onSubmit={handleNewGuestSubmit}>
                
-               <label>Name:</label>
-               <input  ref={name} type="text" id="name" name="name" />
+               <label></label>
+               <input  placeholder="Name" ref={name} type="text" id="name" name="name" />
    
-               <label>Email:</label>
-               <input  ref={email} type="text" id="email" name="email" />
+               <label></label>
+               <input  placeholder="Email" ref={email} type="text" id="email" name="email" />
    
-               <label>Phone:</label>
-               <input  ref={phone} type="text" id="phone" name="phone" />
+               <label></label>
+               <input  placeholder="Phone" ref={phone} type="text" id="phone" name="phone" />
 
                <label>Its Confirmed?:</label>
 
@@ -61,7 +61,7 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
                     <option value="false">false</option>
                 </select>
               
-               <input type="submit" value="Add Guest"/>
+               <input className="btn btn-info btn-sm" type="submit" value=" + "/>
 
            </form>
            </div>
