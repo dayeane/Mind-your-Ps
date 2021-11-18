@@ -19,13 +19,11 @@ function ItemContainer ( {handleDelete, shownList, setShownItems, selectedEvent,
                         <h3>Category</h3>
                     </th>
                     <th scope="col">
-                        <h3>Owner</h3>
+                        <h3>Name</h3>
                     </th>
                     <th scope="col">
-                        <h3>Owner</h3>
                     </th>
                     <th scope="col">
-                        <h3>Owner</h3>
                     </th>
                 </tr>
             </thead>

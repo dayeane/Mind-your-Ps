@@ -58,6 +58,13 @@
           "email": "dayeane85@gmail.com",
           "phone": "9548033128",
           "confirm": "true"
+        },
+        {
+          "id": "07f17b70-a443-4d30-93b6-873b97d63752",
+          "name": "Dayeane1111",
+          "email": "dayeane85@gmail.com",
+          "phone": "9548033128",
+          "confirm": "true"
         }
       ],
       "thingsToBring": [
@@ -77,6 +84,12 @@
           "id": 3,
           "item": "Paper Plates",
           "category": "Items",
+          "claimer": ""
+        },
+        {
+          "id": "0121a99d-4846-46c0-9ba8-c43490019f40",
+          "item": "",
+          "category": "",
           "claimer": ""
         }
       ]
