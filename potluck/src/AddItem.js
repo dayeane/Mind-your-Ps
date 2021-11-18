@@ -3,8 +3,6 @@ import { v4 as uuid } from 'uuid';
 
 function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) {
 
-    const {id} = selectedEvent    
-   
     const [formData, setFormData] = useState ({
         item:"",
         category:"",
@@ -18,8 +16,6 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
     function handleSubmit(e){
         e.preventDefault()
 
-        if (id === 0) return alert("Please select an event")
-
         const newItem= {
             id: uuid(),
             item: formData.item,
@@ -29,16 +25,16 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
 
         console.log(itemList)
         
-        fetch (`http://localhost:3001/events/${id}`, {
+        fetch (`http://localhost:3001/events/${selectedEvent.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({thingsToBring: [...itemList, newItem]})
-        } )
+        })
         .then(res => res.json())
         .then((data)=>{
-            setSelectedEvent(data.thingsToBring)
+            setSelectedEvent(data)
             seteShownItems(data.thingsToBring)
         })
     
@@ -50,11 +46,11 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label for="item">Item</label>
+                    <label htmlFor="item">Item</label>
                     <input onChange={handleChange} value={formData.item} type="text" name="item"/>
-                    <label for="category">Category</label>
+                    <label htmlFor="category">Category</label>
                     <input onChange={handleChange} value={formData.category} type="text" name="category"/>
-                    <label for="claimer">Owner</label>
+                    <label htmlFor="claimer">Owner</label>
                     <input onChange={handleChange} value={formData.claimer} type="text" name="claimer"/>
                 </div>
                 <button type="submit">

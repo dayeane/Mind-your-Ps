@@ -7,7 +7,7 @@ function ItemContainer ( {handleDelete, shownList, seteShownItems, selectedEvent
         return (<h2>Loading..</h2>)
     }
 
-    const shownItem = shownList.map((item) => <ItemCard key= {item.id} handleDelete= {handleDelete} shownList={shownList} itemObj= {item} seteShownItems={seteShownItems} selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/*handleClaimItem={handleClaimItem}*//> 
+    const shownItem = shownList.map((item) => <ItemCard key={item.id} handleDelete= {handleDelete} shownList={shownList} itemObj= {item} seteShownItems={seteShownItems} selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/*handleClaimItem={handleClaimItem}*//> 
     )
     
     return (
