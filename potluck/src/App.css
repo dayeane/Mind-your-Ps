@@ -2,14 +2,29 @@
   text-align: center;
   font-family: 'Dosis', sans-serif;
   font-weight: 500;
-  /* poss */
+  /* possible font-weights: 200, 300, 400, 500, 600, 700, 800 */
 }
 
 h2 {
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+}
+
+input {
+  text-align: center;
   font-family: 'Kalam', cursive;
   font-weight: 700;
   /* possible font-weights: 300, 400, 700 */
+}
+
+table {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+}
+
+table th {
+  font-weight: 700;
 }
 
 .App-logo {
@@ -32,6 +47,11 @@ h2 {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white; */
+}
+
+body{
+  background-image: url(https://static9.depositphotos.com/1006994/1181/v/950/depositphotos_11813520-stock-illustration-abstract-music-background.jpg);
+
 }
 
 .app-header a {
