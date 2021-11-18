@@ -70,7 +70,7 @@ function App() {
                             eventId={selectedEvent.id}/>
         </Route>
         <Route exact path="/itemsToBring">
-          <ItemsToBring />
+          <ItemsToBring selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

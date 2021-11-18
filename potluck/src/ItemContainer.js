@@ -1,9 +1,13 @@
 import react from "react"
 import ItemCard from "./ItemCard"
 
-function ItemContainer ( {itemsList} ) {
+function ItemContainer ( {handleDelete, shownList, seteShownItems, selectedEvent, setSelectedEvent /*handleClaimItem*/} ) {
     
-    const shownItem = itemsList.map((item) => <ItemCard key= {item.id} item= {item}  /> 
+    if (!shownList) {
+        return (<h2>Loading..</h2>)
+    }
+
+    const shownItem = shownList.map((item) => <ItemCard key={item.id} handleDelete= {handleDelete} shownList={shownList} itemObj= {item} seteShownItems={seteShownItems} selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent}/*handleClaimItem={handleClaimItem}*//> 
     )
     
     return (
