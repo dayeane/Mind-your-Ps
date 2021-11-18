@@ -1,7 +1,7 @@
 import react, {useState}  from "react"
 import { v4 as uuid } from 'uuid';
 
-function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) {
+function AddItem ( {itemList, selectedEvent, setSelectedEvent, setShownItems}) {
 
     const [formData, setFormData] = useState ({
         item:"",
@@ -35,7 +35,7 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, seteShownItems}) 
         .then(res => res.json())
         .then((data)=>{
             setSelectedEvent(data)
-            seteShownItems(data.thingsToBring)
+            setShownItems(data.thingsToBring)
         })
     
     }   
