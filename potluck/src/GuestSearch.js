@@ -57,8 +57,8 @@ function GuestSearch({setFilteredGuest, allGuest}) {
 
             <select onChange={handleSearch} ref={confirm}  name="confirm" id="confirm">
                 <option value="All">All</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
             </select>
 
         </form>

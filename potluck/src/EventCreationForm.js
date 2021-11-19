@@ -128,7 +128,7 @@ function EventCreationForm ({updateWithNewEvent}) {
                     <label htmlFor='eventLocation'> </label>
                     <input placeholder="location" type='text' id='eventLocation' name='location' value={formData.location} onChange={formChangeHandler}></input>
                 </div>
-                <button className="btn btn-primary mt-3" type='submit' id='submit' name='submit'>Party!</button>
+                <button className="btn btn-primary mt-3 mb-3" type='submit' id='submit' name='submit'>Party!</button>
             </form>
         </div>
     )
