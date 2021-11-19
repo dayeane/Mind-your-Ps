@@ -23,7 +23,7 @@ table {
   font-family: 'Kalam', cursive;
 }
 
-table th {
+thead {
   font-weight: 700;
 }
 
@@ -51,7 +51,8 @@ table th {
 
 body{
   background-image: url(https://static9.depositphotos.com/1006994/1181/v/950/depositphotos_11813520-stock-illustration-abstract-music-background.jpg);
-
+  width: 100%;
+  height: auto;
 }
 
 .app-header a {

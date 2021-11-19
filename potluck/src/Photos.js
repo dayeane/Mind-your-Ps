@@ -10,7 +10,7 @@ console.log(eventId)
    
     return (
     <>
-        <h1>Best Memories</h1>
+        <h1>Photo Album</h1>
         <CreateImage eventId={eventId} setAllEventPhotos={setAllEventPhotos} allEventPhotos={allEventPhotos} />
         <div>
           {photoList}

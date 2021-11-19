@@ -13,13 +13,13 @@ function ItemContainer ( {handleDelete, shownList, setShownItems, selectedEvent,
             <thead className="thead-dark" >
                 <tr >
                     <th scope="col">
-                        <h3>Item</h3>
+                        Item
                     </th>
                     <th scope="col">
-                        <h3>Category</h3>
+                        Category
                     </th>
                     <th scope="col">
-                        <h3>Name</h3>
+                        Name
                     </th>
                     <th scope="col">
                     </th>

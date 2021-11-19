@@ -35,7 +35,7 @@ function CreateImage({ eventId, allEventPhotos, setAllEventPhotos}) {
   
 return(
 <>
-     <h2> New Photo</h2>
+     <h2> Add a Photo</h2>
         <form onSubmit={handleNewPhoto}>
             <div className="form-group">
                 <label></label>
