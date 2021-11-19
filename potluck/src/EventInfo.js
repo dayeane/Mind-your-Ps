@@ -23,7 +23,7 @@ function EventInfo({eventObj}) {
             <p> <strong>Date</strong>: {date}</p>
             <p> <strong>Time</strong>: {time}</p>
             <p> <strong>Invite</strong>: {inviteStructure}</p>
-            <p> <strong>Dress code</strong>: {dressCode}</p>
+            <p> <strong>Dress Code</strong>: {dressCode}</p>
             <button className="btn btn-primary row col-1 align-self-center" onClick={() => history.push('/editEvent')}>Edit Event</button>      
         </div>
     ) 
