@@ -4,7 +4,14 @@ import GuestCreateForm from "./GuestCreateForm";
 
 function GuestContainer({ eventId, allGuest, setAllGuest, filteredGuest, setFilteredGuest }) {
 
-  if (!filteredGuest){ return <h2>..Please select and event from home page</h2> }
+  if (!filteredGuest) { 
+    return (
+    <div className="card mt-5">
+      <h2 className="card-header">Guest Info</h2>
+      <p>Please either select an event with your event code or create a new event to manage</p>
+    </div>
+    )
+  }
   
   const guestList = filteredGuest.map((guest) => <Guest key={guest.id} guest={guest} />);
   
