@@ -51,6 +51,8 @@ function App() {
 
   function updateWithNewEvent(eventObj) {
     setSelectedEvent(eventObj);
+    setAllEvents([...allEvents, eventObj]);
+    history.push('/info');
   }
 
   return (
