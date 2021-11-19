@@ -13,7 +13,7 @@ function HomeScreen({codeSubmit}) {
     return (
         <div className="card mt-5" id="HomeScreen">
             <div className="card header bg-light">
-                <h2>HOME</h2>
+                <h2>Welcome to Potluck!</h2>
             </div>
             <form className="form mt-5" name='codeForm' onSubmit={(e) => codeSubmit(e, eventCode)}>
                 <input onChange={codeChange} type='text' id='code' name='code' placeholder="Enter event code" value={eventCode}></input>

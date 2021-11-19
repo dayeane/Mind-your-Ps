@@ -15,14 +15,14 @@ function EventInfo({eventObj}) {
         <div className="card mt-5" id="eventInfo">
             <div className="card-header"><h2>EVENT INFO</h2></div>
             <h4> <strong>Name</strong>: {name}</h4>
-            <p> <strong>Event code</strong>: {code}</p> 
+            <p> <strong>Event Code</strong>: {code}</p> 
             <p> <strong>Description</strong>: {description}</p>
             <p> <strong>Theme</strong>: {theme}</p>
             <p> <strong>Location</strong>: {location}</p>
             <p> <strong>Date</strong>: {date}</p>
             <p> <strong>Time</strong>: {time}</p>
             <p> <strong>Invite</strong>: {inviteStructure}</p>
-            <p> <strong>Dress code</strong>: {dressCode}</p>
+            <p> <strong>Dress Code</strong>: {dressCode}</p>
         </div>
     ) 
 }
