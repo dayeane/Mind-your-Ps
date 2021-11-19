@@ -5,11 +5,11 @@ function EventInfo({eventObj}) {
         return (
             <div className="card mt-5">
                 <h2 className="card-header">EVENT INFO</h2>
-                <p>Please either select an event with your event code or create a new event to manage :)</p>
+                <p>Please either select an event with your event code or create a new event to manage</p>
             </div>
         )
     }
-    let {name, time, code, date, description, location, inviteStructure, dressCode} = {...eventObj};
+    let {name, time, code, date, description, theme, location, inviteStructure, dressCode} = {...eventObj};
     
     return (
         <div className="card mt-5" id="eventInfo">
@@ -17,6 +17,7 @@ function EventInfo({eventObj}) {
             <h4>Name: {name}</h4>
             <p>Event code: {code}</p> 
             <p>Description: {description}</p>
+            <p>Theme: {theme}</p>
             <p>Location: {location}</p>
             <p>Date: {date}</p>
             <p>Time: {time}</p>

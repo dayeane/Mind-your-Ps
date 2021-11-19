@@ -35,7 +35,7 @@ function CreateImage({ eventId, allEventPhotos, setAllEventPhotos}) {
   
 return(
 <>
-     <h2> Add a Photo</h2>
+     
         <form onSubmit={handleNewPhoto}>
             <div className="form-group">
                 <label></label>
@@ -46,7 +46,7 @@ return(
               <input placeholder="URL" className="form-control"  ref={url} type="text" id="url" name="url" />
             </div>
 
-            <button  className="btn btn-primary" type="submit" value="Add Photo">submit</button>
+            <button  className="btn btn-primary mb-3 mt-3" type="submit" value="Add Photo">submit</button>
 
         </form>
       </>

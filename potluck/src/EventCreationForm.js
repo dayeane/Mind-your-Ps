@@ -32,7 +32,7 @@ function EventCreationForm ({updateWithNewEvent}) {
         location: '',
         guests: [],
         thingsToBring: [],
-        pictures: []
+        photos: []
     })
 
     function formChangeHandler(e) {
@@ -72,35 +72,40 @@ function EventCreationForm ({updateWithNewEvent}) {
     }
     
     return (
-        <div className="card mt-5 row" >
+        <div className="card mt-5" >
             <div className="card header bg-light">
                 <h2>New Event</h2>
             </div>
             <form onSubmit={(e) => formSubmitHandler(e)} name='newEventForm' id='newEventForm'>
-                {/* <div className="col-12"> */}
                 <div className="form-group mt-4">
-                    <label for='eventName'></label>
-                    <input placeholder= "Event name"type='text' id='eventName' value={formData.name} onChange={formChangeHandler} name='name'></input>
+                    <label htmlFor='eventName'></label>
+                    <input placeholder= "Event name"type='text' id='eventName' value={formData.name} onChange={formChangeHandler} name='name'/>
                 </div>
-                {/* </div> */}
+
                 <div className="form-group mt-4">  
-                    <label for='eventDate '></label>
-                    <input placeholder="Event date" type='date' id='eventDate' name='date' value={formData.date} onChange={formChangeHandler}></input>
+                    <label htmlFor='eventDate '></label>
+                    <input placeholder="Event date" type='date' id='eventDate' name='date' value={formData.date} onChange={formChangeHandler}/>
                 </div> 
+
                 <div className="form-group mt-4">
-                    <label for='eventTime'>Event time:</label>
-                    <input placeholder = "Event time" type='time' id='eventTime' name='time' value={formData.time} onChange={formChangeHandler}></input>
+                    <label htmlFor='eventTime'>Event time:</label>
+                    <input placeholder = "Event time" type='time' id='eventTime' name='time' value={formData.time} onChange={formChangeHandler}/>
+                </div>
+
+                <div className="form-row">
+                    <div className="form-group mt-4">
+                        <textarea placeholder="Event description" type='text' id='eventDescription' name='description' value={formData.description} onChange={formChangeHandler}></textarea> 
+                        
+                    </div> 
+                        
+                    <div className="form-group mt-4"> 
+                        <textarea placeholder="Event theme" type='text' id='eventTheme' name='theme' value={formData.theme} onChange={formChangeHandler}></textarea>
+                    </div>   
                 </div>
                     
-                <div className=" form-group row mt-4">
-                    <label for='eventDescription'></label>
-                    <input placeholder="Event description" type='text' id='eventDescription' name='description' value={formData.description} onChange={formChangeHandler}></input>   
-                    <label for='eventTheme'></label>
-                    <input placeholder="Event theme" type='text' id='eventTheme' name='theme' value={formData.theme} onChange={formChangeHandler}></input>
-                    </div>   
 
                 <div className=" form-group mt-4">
-                    <label for='eventDressCode'>Event dress code: </label>
+                    <label htmlFor='eventDressCode'>Event dress code: </label>
                     <select id='eventDressCode' name='dressCode' value={formData.dressCode} onChange={formChangeHandler}>
                         <option value='formal'>Formal</option>
                         <option value='casual'>Casual</option>
@@ -112,7 +117,7 @@ function EventCreationForm ({updateWithNewEvent}) {
                     </select>
                 </div>
                 <div className=" form-group mt-4">
-                    <label for='eventInviteStructure'>Event invite structure:</label>
+                    <label htmlFor='eventInviteStructure'>Event invite structure:</label>
                     <select id='eventInviteStructure' name='inviteStructure' value={formData.inviteStructure} onChange={formChangeHandler}>
                         <option value='plus one'>Plus one</option>
                         <option value='invite only'>Invite only</option>
@@ -120,7 +125,7 @@ function EventCreationForm ({updateWithNewEvent}) {
                     </select>
                 </div>
                 <div className=" form-group mt-4">
-                    <label for='eventLocation'> </label>
+                    <label htmlFor='eventLocation'> </label>
                     <input placeholder="location" type='text' id='eventLocation' name='location' value={formData.location} onChange={formChangeHandler}></input>
                 </div>
                 <button className="btn btn-primary mt-3" type='submit' id='submit' name='submit'>Party!</button>

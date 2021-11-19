@@ -50,7 +50,7 @@ function AddItem ( {itemList, selectedEvent, setSelectedEvent, setShownItems}) {
                     <input placeholder="category" onChange={handleChange} value={formData.category} type="text" name="category"/>
                     <input placeholder="claim" onChange={handleChange} value={formData.claimer} type="text" name="claimer"/>
                 </div>
-                <button className="btn btn-primary" type="submit">
+                <button className="btn btn-primary mb-5 mt-4" type="submit">
                     Add Item
                 </button>
             </form>

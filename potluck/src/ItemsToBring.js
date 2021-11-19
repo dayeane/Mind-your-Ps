@@ -31,17 +31,20 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     }
 
     return (
-        <div>
-            <h1> Items we need!</h1>
-            <AddItem 
-                itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} setShownItems={setShownItems}/>
-            <ItemContainer handleClaimItem= {handleClaimItem} 
-                           shownList= {shownItems}
-                           setShownItems= {setShownItems}
-                           selectedEvent={selectedEvent}
-                           setSelectedEvent={setSelectedEvent}
-                           handleDelete={handleDelete}/>
-        </div>
+        <>
+            <div className="card row mt-5">
+                <div className="card-header"><h2>Items we need!</h2></div>
+                <AddItem itemList={shownItems} setSelectedEvent={setSelectedEvent} selectedEvent={selectedEvent} setShownItems={setShownItems}/>
+            </div>
+            <div>
+                <ItemContainer handleClaimItem= {handleClaimItem} 
+                            shownList= {shownItems}
+                            setShownItems= {setShownItems}
+                            selectedEvent={selectedEvent}
+                            setSelectedEvent={setSelectedEvent}
+                            handleDelete={handleDelete}/>
+            </div>
+        </>
         )
     }
 
