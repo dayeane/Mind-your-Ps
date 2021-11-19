@@ -38,19 +38,21 @@ function App() {
     if (filterResult.length === 0) {
       alert(`Event '${codeName}' not found. Please try again or create a new event.`);
     } else {
-      //alert('Event found! Loaded into event manager :)');
       setSelectedEvent(filterResult[0]);
       setAllGuest(filterResult[0].guests);
       setFilteredGuest(filterResult[0].guests)
       setAllEventPhotos(filterResult[0].photos)
-      setAllEvents([]);
       history.push('/info');
     }
   }
   console.log(selectedEvent.id)
 
   function updateWithNewEvent(eventObj) {
+    debugger
     setSelectedEvent(eventObj);
+    setAllGuest(eventObj.guests);
+    setFilteredGuest(eventObj.guests)
+    setAllEventPhotos(eventObj.photos)
     setAllEvents([...allEvents, eventObj]);
     history.push('/info');
   }
