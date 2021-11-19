@@ -57,8 +57,8 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
                <label> Confirmed</label>
 
                 <select ref={confirm}  name="confirm" id="confirm">
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
+                    <option value="true">true</option>
+                    <option value="false">false</option>
                 </select>
 
                 <div>

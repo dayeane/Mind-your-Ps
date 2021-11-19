@@ -20,7 +20,8 @@ function HomeScreen({codeSubmit}) {
                 <button  className="btn btn-primary" type='submit' id='codeSubmit' name='codeSubmit'>Submit Code</button>
             </form>
             <div className="col-12 mt-5">
-                <Link to='/createEvent'>Create New Event</Link>
+                <Link to='/createEvent'></Link>
+                <button className="btn btn-primary" type="Create New Event">Create New Event</button>
             </div>
 
         </div>
