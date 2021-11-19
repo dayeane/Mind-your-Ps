@@ -158,7 +158,7 @@
     },
     {
       "id": 7,
-      "name": "test for event object structure",
+      "name": "broken data edit test",
       "date": "2021-12-03",
       "time": "14:45",
       "description": "I had a typo for 'location' before - hopefully this will fix that. Also, it should initialize ALL of the eventObj properties (guests/pictures/thingsToBring), so that their respective forms have a target to add more entries to.",
@@ -168,7 +168,8 @@
       "code": "anticrime-covalences-yah",
       "location": "https://goo.gl/maps/dvw61HaTNKxbptu19",
       "guests": [],
-      "photos": []
+      "photos": [],
+      "thingsToBring": []
     },
     {
       "name": "Dayeane",
@@ -182,7 +183,7 @@
       "location": "2345 Drive ",
       "guests": [],
       "thingsToBring": [],
-      "pictures": [],
+      "photos": [],
       "id": 6
     }
   ]
