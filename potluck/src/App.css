@@ -1,13 +1,30 @@
 .App {
   text-align: center;
-  font-family: 'Kalam', cursive;
-  font-weight: 700;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 500;
+  /* possible font-weights: 200, 300, 400, 500, 600, 700, 800 */
 }
 
 h2 {
   text-align: center;
   font-family: 'Dosis', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+input {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  /* possible font-weights: 300, 400, 700 */
+}
+
+table {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+}
+
+table th {
+  font-weight: 700;
 }
 
 .App-logo {
