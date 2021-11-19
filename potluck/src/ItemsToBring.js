@@ -6,7 +6,13 @@ function ItemsToBring ({selectedEvent, setSelectedEvent}) {
     const [shownItems, setShownItems] = useState(selectedEvent.thingsToBring)
     
     if (selectedEvent.length === 0) {
-        return (<p>Please either select an event to manage or create a new event </p>)}
+        return (
+            <div className="card mt-5">
+                <h2 className="card-header">Items to bring</h2>
+                <p>Please either select an event with your event code or create a new event to manage</p>
+            </div>
+        )
+    }
         
 
     function handleDelete(id) {
