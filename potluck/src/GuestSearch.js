@@ -53,12 +53,12 @@ function GuestSearch({setFilteredGuest, allGuest}) {
             <label></label>
             <input placeholder="Phone" onChange={handleSearch} ref={phone} type="text" id="phone" name="phone" />
 
-            <label>Its Confirmed?:</label>
+            <label> Confirmed</label>
 
             <select onChange={handleSearch} ref={confirm}  name="confirm" id="confirm">
                 <option value="All">All</option>
-                <option value="true">true</option>
-                <option value="false">false</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
             </select>
 
         </form>

@@ -54,15 +54,17 @@ function GuestCreateForm({eventId, allGuest, setAllGuest, setFilteredGuest}) {
                <label></label>
                <input  placeholder="Phone" ref={phone} type="text" id="phone" name="phone" />
 
-               <label>Its Confirmed?:</label>
+               <label> Confirmed</label>
 
                 <select ref={confirm}  name="confirm" id="confirm">
-                    <option value="true">true</option>
-                    <option value="false">false</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
                 </select>
-              
-               <input className="btn btn-primary" type="submit" value=" Add Guest "/>
 
+                <div>
+                <table className="table table-striped"></table>
+               <input className=" btn btn-primary row col-2 mt-3 mb-3" type="submit" value=" Add Guest "/>
+               </div>
            </form>
            </div>
          </>
