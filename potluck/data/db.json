@@ -29,7 +29,7 @@
           "name": "Dayeane Cortes",
           "email": "dayis@example.com",
           "phone": "5554312244",
-          "confirm": "false"
+          "confirm": "true"
         },
         {
           "id": 2,
@@ -84,12 +84,6 @@
           "id": 3,
           "item": "Paper Plates",
           "category": "Items",
-          "claimer": ""
-        },
-        {
-          "id": "0121a99d-4846-46c0-9ba8-c43490019f40",
-          "item": "",
-          "category": "",
           "claimer": ""
         }
       ]
