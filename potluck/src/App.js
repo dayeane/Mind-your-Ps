@@ -7,6 +7,7 @@ import GuestContainer from './GuestContainer';
 import {useState, useEffect} from 'react';
 import ItemsToBring from './ItemsToBring';
 import Photos from './Photos';
+import EventEditForm from './EditEvent';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 
@@ -48,7 +49,6 @@ function App() {
   console.log(selectedEvent.id)
 
   function updateWithNewEvent(eventObj) {
-    debugger
     setSelectedEvent(eventObj);
     setAllGuest(eventObj.guests);
     setFilteredGuest(eventObj.guests)
@@ -83,6 +83,9 @@ function App() {
         </Route>
         <Route exact path="/photos">
           <Photos allEventPhotos={allEventPhotos} setAllEventPhotos={setAllEventPhotos} eventId={selectedEvent.id}/>
+        </Route>
+        <Route exact path="/editEvent">
+          <EventEditForm event={selectedEvent} updateWithNewEvent={updateWithNewEvent}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

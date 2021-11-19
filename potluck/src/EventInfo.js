@@ -1,6 +1,7 @@
-
+import {useHistory} from "react-router-dom";
 function EventInfo({eventObj}) {
-    console.log(eventObj);
+    const history = useHistory();
+    
     if (eventObj?.code === undefined) {
         return (
             <div className="card mt-5">
@@ -23,6 +24,7 @@ function EventInfo({eventObj}) {
             <p>Time: {time}</p>
             <p>Invite: {inviteStructure}</p>
             <p>Dress code: {dressCode}</p>
+            <button className="btn btn-primary row col-1 align-self-center" onClick={() => history.push('/editEvent')}>Edit Event</button>
         </div>
     ) 
 }
